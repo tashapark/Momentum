@@ -1,17 +1,45 @@
-const age = parseInt(prompt("How old are you?"));
+const h1 = document.querySelector("div.hello:first-child h1");
 
-if (isNaN(age) || age < 0) {
-  //=== true
-  console.log("please write a real positive number");
-} else if (age < 18) {
-  console.log("you are too young");
-} else if (age >= 18 && age <= 50) {
-  console.log("you can drink");
-} else if (age > 50 && age <= 80) {
-  console.log("you should exercise");
-} else if (age === 100) {
-  //순서가 중요하니까 잘 생각할 것. 이게 아래면,절대 안 나타남.
-  console.log("wow!");
-} else {
-  console.log("you can do whatever you want");
+function handleh1Click() {
+  const currentColor = h1.style.color;
+  let newColor;
+  if (currentColor === "blue") {
+    newColor = "tomato";
+  } else {
+    newColor = "blue";
+  }
+  h1.style.color = newColor;
 }
+h1.addEventListener("click", handleh1Click); //("event", functionName) js에게 실행을 넘겨주는 것
+
+function handleMouseenter() {
+  h1.innerText = "mouse is here";
+}
+
+function handleMouseleave() {
+  h1.innerText = "Mouse is gone";
+}
+
+function handleWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy() {
+  alert("copier!");
+}
+
+function handleWindowOffline() {
+  alert("SOS no wifi");
+}
+
+function handleWindowOnline() {
+  alert("all good");
+}
+h1.onclick = handleh1Click; //이렇게 쓰는 것도 가능함.
+h1.addEventListener("mouseenter", handleMouseenter);
+h1.addEventListener("mouseleave", handleMouseleave);
+
+window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
