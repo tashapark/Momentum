@@ -7,9 +7,16 @@
     <title>Momentum</title>
   </head>
   <body>
-    <div class="hello">
-      <h1 class="sexy-font">Click me!</h1>
-    </div>
+    <!-- input의 유효성을 확인하려면 무조건 인풋이 form안에 있어야 함 -->
+    <form id="login-form">
+      <input
+        required
+        maxlength="15"
+        type="text"
+        placeholder="what is your name?"
+      />
+      <button>Log In</button>
+    </form>
     <script src="app.js"></script>
   </body>
 </html>
