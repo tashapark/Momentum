@@ -12,12 +12,14 @@ function onLoginSubmit(event) {
   loginForm.classList.add(HIDDEN_CLASSNAME); // 폼이 사라지게 클래스 .hidden이 나타나도록
   const username = loginInput.value; //입력 값 저장
   localStorage.setItem(USERNAME_KEY, username); // LS에 저장 ("저장될 이름", 변수 명)
-  greeting.innerText = `hello ${username}`; // h1 값을 입력 내용으로 변경
-  greeting.classList.remove(HIDDEN_CLASSNAME); // hidden을 보이게 없애줌.
+  paintGreetings(username); // h1 값을 입력 내용으로 변경 // hidden을 보이게 없애줌.
 }
 
-// 첫번째 인자만 넣어주면 알아서 js가 계산함.
-// ()넣지 말 것. 넣으면 직접 실행한다는 건데 그게 아니라 js가 하도록
+function paintGreetings(username) {
+  // 위 아래 반복되서 함수로 만들어서 따로 뻈음.
+  greeting.innerText = `hello ${username}`; //먼저 그리팅 넣고
+  greeting.classList.remove(HIDDEN_CLASSNAME); // 히든 없애기.. 보이게
+}
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
@@ -27,6 +29,5 @@ if (savedUsername === null) {
   loginForm.addEventListener("submit", onLoginSubmit); //유저이름 입력할 수 있도록
 } else {
   // greeting 보여주기
-  greeting.innerText = `hello ${savedUsername}`; //먼저 그리팅 넣고
-  greeting.classList.remove(HIDDEN_CLASSNAME); // 히든 없애기.. 보이게
+  paintGreetings(savedUsername); //변수만 savedUsername로 바꿔줌
 }
