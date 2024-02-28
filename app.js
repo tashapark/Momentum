@@ -16,7 +16,7 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  // 위 아래 반복되서 함수로 만들어서 따로 뻈음.
+  // 위 아래 반복되서 함수로 만들어서 뺐음
   greeting.innerText = `hello ${username}`; //먼저 그리팅 넣고
   greeting.classList.remove(HIDDEN_CLASSNAME); // 히든 없애기.. 보이게
 }

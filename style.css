@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+
+#winLose {
+  font-weight: bold;
+}
