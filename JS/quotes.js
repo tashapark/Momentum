@@ -140,6 +140,15 @@ const quotes = [
       "누구도, 누굴 함부로 할 수 없어.그럴 권리는 아무도 없는 거란다. 그건 죄야.",
     author: "윤여정 (김수현 대사)",
   },
+  {
+    quote: "시간은 내 편이야.",
+    author: "",
+  },
+  {
+    quote:
+      "네가 정말 좋아서 행복하게 할 수 있는 일. 그게 바로 너의 답이 될 거다",
+    author: "낭만닥터 김사부 3",
+  },
 ];
 
 const quote = document.querySelector("#quote span:first-child");
