@@ -12,13 +12,15 @@ function saveToDos() {
 
 function deleteToDo(event) {
   const li = event.target.parentElement; //console.dir로 찾아야 함.
+
   li.remove(); //어떤 x를 지울 지 몰라서 부여해주는 것임.
 }
 
 function paintToDo(newTodo) {
   const li = document.createElement("li");
+  li.id = newTodo.id; //list id랑 같이
   const span = document.createElement("span");
-  span.innerText = newTodo; //span에 투두 넣기
+  span.innerText = newTodo.text; //span에 투두 넣기 // object니깐 text 나온다고 표기필요
   const button = document.createElement("button");
   button.innerText = "✖️";
   button.addEventListener("click", deleteToDo);
@@ -31,8 +33,12 @@ function handleToDoSubmit(event) {
   event.preventDefault();
   const newTodo = toDoInput.value; // input의 현재 value를 새로운 변수에 복사하는 것. 뒤에서 뭐 하든 상관 없음
   toDoInput.value = ""; //엔터치고 비워 지도록
-  toDos.push(newTodo); // 배열에 새로운 투두가 추가되도록
-  paintToDo(newTodo); //화면에 투두 리스트 보이게
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  };
+  toDos.push(newTodoObj); // 배열에 새로운 투두가 추가되도록
+  paintToDo(newTodoObj); //화면에 투두 리스트 보이게
   saveToDos();
 }
 
@@ -55,3 +61,18 @@ if (savedToDos !== null) {
 //parsedToDos.forEach((item) => console.log("this is the turn of", item));
 // 배열 각각의 항목에 대해 함수 실행 시킴. 항목 개수만큼 실행
 //함수 굳이 안 만들고 치는 방법. => arrow function
+
+// function sexyFilter() {
+//   // 반드시 true를 리턴해야, 새 array에서 object유지 가능.
+//   // false면 제외하고, 나머지만 새 array에 넣음
+// }
+
+// [1, 2, 3, 4].filter(sexyFilter);
+
+// sexyFilter(1); //1
+// sexyFilter(2); //1
+// sexyFilter(3); //1
+// sexyFilter(4); //1
+// // 이렇게 항목 수만큼 4번 실행되고, 다 각자 다른 아이템으로 실행됨.
+// // if 3일 때 false면 [1, 2, 4]만 됨
+//filter 엄청 중요함!!!!!!!!!!!
