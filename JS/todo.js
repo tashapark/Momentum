@@ -12,8 +12,9 @@ function saveToDos() {
 
 function deleteToDo(event) {
   const li = event.target.parentElement; //console.dir로 찾아야 함.
-
   li.remove(); //어떤 x를 지울 지 몰라서 부여해주는 것임.
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // 누른 것을 지운다는 것은 누른 게 아닌 다른 id를 남기는 것.
+  saveToDos(); //지웠으면 반드시 저장할 것.
 }
 
 function paintToDo(newTodo) {
