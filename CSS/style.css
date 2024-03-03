@@ -17,5 +17,51 @@ img {
 
 body {
   color: whitesmoke;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-size: cover;
+}
+
+#current_date {
+  text-align: left;
+}
+
+#login-form,
+#greeting {
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 0;
+}
+
+#login-form input,
+#login-form input::placeholder {
+  font-size: 25px;
+  border: none;
+  background: transparent;
+  text-decoration-line: underline;
+  color: aliceblue;
+}
+
+#clock {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 80px;
+  margin-bottom: 0;
+}
+
+#todo-list {
+  font-size: 25px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#todo-list button {
+  font-size: 20px;
+  margin-left: 10px;
 }
