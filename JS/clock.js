@@ -8,7 +8,7 @@ function getClock() {
   const hours = String(date.getHours()).padStart(2, "0"); //getHours에는 padStart못 씀.. number라서 그래서 바꿔주면 됌. String()에 넣어주);
   const minutes = String(date.getMinutes()).padStart(2, "0");
   // const seconds = String(date.getSeconds()).padStart(2, "0");
-  clock.innerText = `${hours}:${minutes}`;
+  clock.innerText = `${hours < 12 ? `오전` : `오후`} ${hours}:${minutes}`;
 }
 
 getClock(); //호출하고, 아래서 1초 간격 아니면 화면에 바로 안 나타남.

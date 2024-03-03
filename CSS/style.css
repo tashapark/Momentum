@@ -11,7 +11,7 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 100%;
+  opacity: 80%;
   background-position: center center;
 }
 
@@ -20,10 +20,13 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-size: cover;
+  background-color: black;
 }
 
 #current_date {
   text-align: left;
+  margin-bottom: 0;
+  font-family: monospace;
 }
 
 #login-form,
@@ -34,7 +37,9 @@ body {
 }
 
 #login-form input,
-#login-form input::placeholder {
+#login-form input::placeholder,
+#todo-form input,
+#todo-form input::placeholder {
   font-size: 25px;
   border: none;
   background: transparent;
@@ -46,22 +51,40 @@ body {
   text-align: center;
   font-size: 40px;
   padding-top: 80px;
+  margin-top: 0;
   margin-bottom: 0;
+  font-family: monospace;
 }
-
+#todo-form {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 50px;
+}
 #todo-list {
-  font-size: 25px;
+  font-size: 18px;
   width: 300px;
+  height: 220px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 350px;
   margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding-top: 20px;
+  overflow: auto;
 }
 
 #todo-list button {
-  font-size: 20px;
-  margin-left: 10px;
+  font-size: 18px;
+  margin-left: 15px;
+}
+
+#weather {
+  text-align: right;
+}
+
+#quote {
+  text-align: center;
+  margin-top: 0;
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  line-height: 25px;
 }
