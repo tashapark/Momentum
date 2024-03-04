@@ -58,8 +58,8 @@ body {
 }
 
 #todo-form {
-  width: 400px;
-  margin: auto auto;
+  width: 450px;
+  margin: 0 auto;
   text-align: center;
   font-size: 30px;
   padding-top: 30px;
@@ -68,15 +68,17 @@ body {
 }
 
 #todo-list {
-  width: 400px;
   margin: 0 auto;
+  width: 500px;
+  text-align: center;
+  overflow: auto;
   font-size: 18px;
-  height: 200px;
+  height: 210px;
   padding-top: 20px;
-  overflow: scroll;
 }
 
 #todo-list li {
+  list-style-position: inside;
   margin: 4px 0;
 }
 
@@ -91,7 +93,7 @@ body {
 
 #quote {
   text-align: center;
-  margin-top: 0;
+  margin-top: 5px;
   font-size: 18px;
   font-family: "Times New Roman", Times, serif;
   line-height: 25px;
