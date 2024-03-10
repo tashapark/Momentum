@@ -3,6 +3,7 @@ const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
+const HIDDEN_CLASS = "hidden";
 
 let toDos = []; // 배열로 만들어주기
 
@@ -15,9 +16,14 @@ function deleteToDo(event) {
   li.remove(); //어떤 x를 지울 지 몰라서 부여해주는 것임.
   toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // 누른 것을 지운다는 것은 누른 게 아닌 다른 id를 남기는 것.
   saveToDos(); //지웠으면 반드시 저장할 것.
+  if (toDos.length === 0) {
+    //여기는 배열이 아니라서 length.. 사용 gpt천재
+    toDoList.classList.add(HIDDEN_CLASS);
+  }
 }
 
 function paintToDo(newTodo) {
+  toDoList.classList.remove(HIDDEN_CLASS);
   const li = document.createElement("li");
   li.id = newTodo.id; //list id랑 같이
   const span = document.createElement("span");
