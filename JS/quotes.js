@@ -197,15 +197,22 @@ const quotes = [
   },
 ];
 
-const quote = document.querySelector("#quote span:first-child");
-const author = document.querySelector("#quote span:last-child");
+function quoteChange() {
+  const quote = document.querySelector("#quote span:first-child");
+  const author = document.querySelector("#quote span:last-child");
 
-//console.log(quotes[30 - 1]); //0부터 세니깐, 총 개수에서 1개 빼주면 마지막 것이 됨(예, 30-1).
-//Math.round(1.1); // 1 반올림하는 것
-//Math.ceil(1.1); // 2 큰 값으로 반올림
-//Math.floor(1.99); // 1 작은 값으로 내려줌
+  //console.log(quotes[30 - 1]); //0부터 세니깐, 총 개수에서 1개 빼주면 마지막 것이 됨(예, 30-1).
+  //Math.round(1.1); // 1 반올림하는 것
+  //Math.ceil(1.1); // 2 큰 값으로 반올림
+  //Math.floor(1.99); // 1 작은 값으로 내려줌
 
-const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
-quote.innerText = todaysQuote.quote;
-author.innerText = todaysQuote.author;
+  quote.innerText = todaysQuote.quote;
+  author.innerText = todaysQuote.author;
+}
+
+quoteChange();
+
+// 30분마다 quote 변경
+setInterval(quoteChange, 30 * 60 * 1000);
