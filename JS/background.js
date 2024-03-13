@@ -20,7 +20,18 @@ function bgImageChange() {
   bgImage.loading = "lazy";
   document.body.appendChild(bgImage); //appendChild html에 추가
   //append는 가장 뒤에, prepend를 쓰면 가장 위에 오게 할 수 있음.
+
+  // 이전 이미지 요소를 찾아 제거
+  const previousImage = document.querySelector(".background-image");
+  if (previousImage) {
+    previousImage.remove();
+  }
+
+  // 새 이미지를 body에 추가
+  bgImage.classList.add("background-image");
+  document.body.appendChild(bgImage);
 }
+
 bgImageChange();
 
 // 30분마다 배경 이미지 변경
