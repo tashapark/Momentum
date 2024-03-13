@@ -92,7 +92,9 @@ body {
 }
 
 #weather {
-  text-align: right;
+  position: absolute;
+  top: 16px;
+  right: 0;
 }
 
 #quote-wrap {
@@ -110,14 +112,15 @@ body {
   padding: 10px;
 }
 
-#player {
-  align-items: right;
+iframe {
+  height: 168.7px;
+  width: 300px;
+  position: absolute;
+  padding-top: 7px;
+  right: 0;
+  opacity: 71%;
 }
 
-iframe {
-  height: 180px;
-  width: 320px;
-  position: absolute;
-  top: 0;
-  right: 0;
+iframe playerVars {
+  font-size: 3px;
 }
