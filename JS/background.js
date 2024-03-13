@@ -13,18 +13,18 @@ const images = [
 ];
 
 function bgImageChange() {
+  // 이전 이미지 요소를 찾아 제거
+  const previousImage = document.querySelector(".background-image");
+  if (previousImage) {
+    previousImage.remove();
+  }
+
   const chosenImage = images[Math.floor(Math.random() * images.length)];
   const bgImage = document.createElement("img"); //js에서 html로 만들어 넣을때 사용
 
   bgImage.src = `img/${chosenImage}`;
   bgImage.loading = "lazy";
   bgImage.classList.add("background-image");
-
-  // 이전 이미지 요소를 찾아 제거
-  const previousImage = document.querySelector(".background-image");
-  if (previousImage) {
-    previousImage.remove();
-  }
 
   // 새 이미지를 body에 추가
   document.body.appendChild(bgImage);
