@@ -81,6 +81,10 @@ body {
   border-radius: 12px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #todo-list li {
   list-style-position: inside;
   margin: 4px 0;
@@ -89,6 +93,11 @@ body {
 #todo-list button {
   font-size: 18px;
   margin-left: 15px;
+}
+
+#todo-list input {
+  margin-right: 15px;
+  /* size 조절하려면 label해야 함 귀찮 */
 }
 
 #weather {

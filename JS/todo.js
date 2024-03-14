@@ -22,8 +22,22 @@ function deleteToDo(event) {
   }
 }
 
+function checkToDo(event) {
+  //체크박스 줄 그어지는 것 만들어주려고
+  const checkbox = event.target; //무조건 따로 정의를 해줄 것
+  const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
+  if (checkbox.checked) {
+    text.style.textDecorationLine = "line-through";
+  } else {
+    text.style.textDecorationLine = "none";
+  }
+}
+
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
+  const checkBox = document.createElement("input");
+  checkBox.setAttribute("type", "checkbox");
+  checkBox.addEventListener("change", checkToDo);
   const li = document.createElement("li");
   li.id = newTodo.id; //list id랑 같이
   const span = document.createElement("span");
@@ -31,6 +45,7 @@ function paintToDo(newTodo) {
   const button = document.createElement("button");
   button.innerText = "✖️";
   button.addEventListener("click", deleteToDo);
+  li.appendChild(checkBox);
   li.appendChild(span); //li에 span 들어감
   li.appendChild(button); //li에 버튼 넣기
   toDoList.appendChild(li); // todo리스트에 li넣어줌
