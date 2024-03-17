@@ -195,6 +195,52 @@ const quotes = [
     그러면 그 목소리는 잠잠해질 것이다.`,
     author: `Vincent Van Gogh`,
   },
+  {
+    quote: `If you want to fly, give up everything that weighs you down.`,
+    author: `Toni Morrison`,
+  },
+  {
+    quote: `If you don't know where you are going,
+    any road will take you there.`,
+    author: `Rouise Carrol, Alice in Wonderland`,
+  },
+  {
+    quote: `포기하지 말고, 흔들리지 말고, 끝까지 해보기. 
+    그만둘 이유는 많으니깐.
+    그런 꿈을 꿨던 이유가 있으니깐 나를 믿고 끝까지 해보자.`,
+    author: `유튜버 Alganzi`,
+  },
+  {
+    quote: `후회만 가득한 과거와 불안하기만한 미래때문에 지금을 망치지지 마세요.`,
+    author: `눈이 부시게 中`,
+  },
+  {
+    quote: `'단지 부족한 부분을 채우기 위해 애쓸 뿐인 걸.'
+    속눈썹 위로 햇살이 쏟아졌고, 그는 늘 그렇듯 혼자만의 나머지 공부를 시작했다.`,
+    author: `세드릭의 공부 中, 낮잠 NZ Ambience`,
+  },
+  {
+    quote: `To the world you may be the one person 
+    but to one person you may be the world. `,
+    author: ``,
+  },
+  {
+    quote: `"When you want something, 
+    all the universe conspires in helping you to achieve it"`,
+    author: `Paulo Coelho, the Alchemist`,
+  },
+  {
+    quote: ``,
+    author: ``,
+  },
+  {
+    quote: ``,
+    author: ``,
+  },
+  {
+    quote: ``,
+    author: ``,
+  },
 ];
 
 function quoteChange() {
