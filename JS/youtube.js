@@ -11,7 +11,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
-    videoId: "AKWlyl8_sdM", //변경-영상ID //산나비.
+    videoId: "PfqRyzUuHnM", //변경-영상ID //산나비.
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
