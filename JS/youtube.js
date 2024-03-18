@@ -11,22 +11,24 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 let player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
-    videoId: "PfqRyzUuHnM", //변경-영상ID //산나비.
+    videoId: "gWfFWVQW13E", //변경-영상ID //리스본 카페.
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
       autoplay: 1, //자동재생 여부(1:자동재생 함, mute와 함께 설정)
       mute: 1, //음소거여부(1:음소거 함)
-      loop: 0, //반복재생여부(1:반복재생 함)
+      loop: 1, //반복재생여부(1:반복재생 함)
       playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
-      playlist:
-        "AKWlyl8_sdM,4Hm56tqcOc,s56deFmiIh0,PfqRyzUuHnM,gOjkGLBZhZo,4YUuA-hPDZA,FDI8d7jm4zU,BJ2U4t1jruA,wkFL8Oa0p30,o3ORqZYUccE,POsucxJPxqM,VFosjkiy7bw",
+      // playlist:
+      //  "AKWlyl8_sdM,4Hm56tqcOc,s56deFmiIh0,PfqRyzUuHnM,gOjkGLBZhZo,4YUuA-hPDZA,FDI8d7jm4zU,BJ2U4t1jruA,wkFL8Oa0p30,o3ORqZYUccE,POsucxJPxqM,VFosjkiy7bw",
       //이러다 공허하게 //내가 죽으려고 //산나비 //말포이 공부중 //내 비평가들 //바닷가 카페 //나비 보베따
       //바람이 물었다 //벅찬 날//쇼팽 왈츠//웬즈데이 //포기할 이유가 없다 //시절인연
+      list: "PLRubaLN0jh9IH9EAxbE1ijc12Ilg-QB-Q",
       shuffle: 1,
       //재생할 영상 리스트 //
       color: "white",
       enablejsapi: 1,
+      disablekb: 0,
 
       events: {
         onReady: onPlayerReady, //onReady 상태일 때 작동하는 function이름
