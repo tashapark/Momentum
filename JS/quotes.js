@@ -196,7 +196,8 @@ const quotes = [
     author: `Vincent Van Gogh`,
   },
   {
-    quote: `If you want to fly, give up everything that weighs you down.`,
+    quote: `If you want to fly, 
+    give up everything that weighs you down.`,
     author: `Toni Morrison`,
   },
   {
@@ -217,7 +218,7 @@ const quotes = [
   {
     quote: `'단지 부족한 부분을 채우기 위해 애쓸 뿐인 걸.'
     속눈썹 위로 햇살이 쏟아졌고, 그는 늘 그렇듯 혼자만의 나머지 공부를 시작했다.`,
-    author: `세드릭의 공부 中, 낮잠 NZ Ambience`,
+    author: `세드릭의 공부 ASMR 中, 낮잠 NZ Ambience`,
   },
   {
     quote: `To the world you may be the one person 
@@ -230,16 +231,25 @@ const quotes = [
     author: `Paulo Coelho, the Alchemist`,
   },
   {
-    quote: ``,
-    author: ``,
+    quote: `보란듯이 나는
+    오늘을 살아낸다
+    과거의 나를 죽일 용기로`,
+    author: `과거의 나를 죽일 용기로 ASMR 中, 낮잠 NZ Ambience`,
   },
   {
-    quote: ``,
-    author: ``,
+    quote: `모두에게 끝이 공평하게 찾아오는법이라면,
+    끝까지 가는것은 중요한 게 아니란다. 
+    정말로 중요한 건,
+    어떻게 끝으로 가는가.`,
+    author: `게임 '산나비' 中`,
   },
   {
-    quote: ``,
-    author: ``,
+    quote: `이토록 마음이 소란하여
+    못 견디게 끔찍한 순간에도
+    숲과 바람과 비가 있다면
+    나는 기꺼이
+    햇살을 기다릴 희망을 싹틔운다`,
+    author: `숲과 바람과 비 ASMR 中, 낮잠 NZ Ambience `,
   },
 ];
 
