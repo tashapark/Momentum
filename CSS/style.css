@@ -73,7 +73,6 @@ body {
 #todo-list {
   margin: 0 auto;
   width: 430px;
-  text-align: center;
   overflow: auto;
   font-size: 16px;
   height: 180px;
@@ -89,6 +88,7 @@ ul {
 #todo-list li {
   list-style-position: inside;
   margin: 4px 0;
+  text-align: left;
 }
 
 #todo-list button {
@@ -204,6 +204,7 @@ iframe playerVars {
   #todo-list li {
     list-style-position: inside;
     margin: 3px 0;
+    text-align: left;
   }
 
   #todo-list button {
