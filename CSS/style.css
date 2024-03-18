@@ -65,7 +65,7 @@ body {
   margin: 0 auto;
   text-align: center;
   font-size: 30px;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 10px;
   margin-top: 0;
   margin-bottom: 0;
@@ -183,7 +183,7 @@ iframe playerVars {
     margin: 0 auto;
     text-align: center;
     font-size: 25px;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 0;
     margin-bottom: 0;
@@ -304,7 +304,7 @@ iframe playerVars {
     margin: 0 auto;
     text-align: center;
     font-size: 17px;
-    padding-top: 25px;
+    padding-top: 10px;
     padding-bottom: 10px;
     margin-top: 0;
     margin-bottom: 0;
