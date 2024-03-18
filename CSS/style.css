@@ -76,9 +76,11 @@ body {
   overflow: auto;
   font-size: 16px;
   height: 180px;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: rgba(26, 26, 26, 0.5);
   border-radius: 12px;
+  padding-left: 12px;
 }
 
 ul {
@@ -93,7 +95,7 @@ ul {
 
 #todo-list button {
   font-size: 14px;
-  margin-left: 15px;
+  margin-left: 4px;
 }
 
 #todo-list input {
@@ -192,7 +194,9 @@ iframe playerVars {
     overflow: auto;
     font-size: 14px;
     height: 130px;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 12px;
     background-color: rgba(26, 26, 26, 0.5);
     border-radius: 12px;
   }
@@ -203,13 +207,13 @@ iframe playerVars {
 
   #todo-list li {
     list-style-position: inside;
-    margin: 3px 0;
+    margin: 4px 0;
     text-align: left;
   }
 
   #todo-list button {
     font-size: 12px;
-    margin-left: 12px;
+    margin-left: 4px;
   }
 
   #todo-list input {
