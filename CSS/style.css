@@ -38,6 +38,7 @@ body {
   padding-top: 10px;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 32px;
 }
 
 #login-form input,
@@ -53,7 +54,7 @@ body {
 
 #clock {
   text-align: center;
-  font-size: 38px;
+  font-size: 32px;
   padding-top: 50px;
   margin-top: 0;
   margin-bottom: 0;
@@ -156,6 +157,7 @@ iframe playerVars {
     padding-top: 10px;
     margin-top: 0;
     margin-bottom: 0;
+    font-size: 25px;
   }
 
   #login-form input,
@@ -171,7 +173,7 @@ iframe playerVars {
 
   #clock {
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
     padding-top: 50px;
     margin-top: 0;
     margin-bottom: 0;
@@ -344,11 +346,9 @@ iframe playerVars {
     /* size 조절하려면 label해야 함 귀찮 */
   }
 
-  /* #weather {
-    position: absolute;
-    top: 10px;
-    right: 0;
-  } */
+  #weather {
+    display: none;
+  }
 
   #quote-wrap {
     text-align: center;
@@ -367,16 +367,11 @@ iframe playerVars {
     padding-right: 20px;
   }
 
-  /* iframe {
-    height: 100px;
-    width: 200px;
-    position: absolute;
-    padding-top: 7px;
-    right: 0;
-    opacity: 71%;
+  iframe {
+    display: none;
   }
 
   iframe playerVars {
-    font-size: 2px;
-  } */
+    display: none;
+  }
 }
