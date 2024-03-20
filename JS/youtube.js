@@ -85,10 +85,12 @@ function stopVideo() {
 
 // 6. 버튼 생성 및 이벤트 핸들러 함수
 const button1 = document.createElement("button");
+button1.classList.add("button1");
 button1.innerText = "ASMR 📚";
 button1.addEventListener("click", playlistButton1);
 
 const button2 = document.createElement("button");
+button2.classList.add("button2");
 button2.innerText = "주인장 pick 🎶";
 button2.addEventListener("click", playlistButton2);
 // 8. 버튼을 body에 추가
