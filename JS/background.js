@@ -10,6 +10,13 @@ const images = [
   "8.jpg",
   "9.jpg",
   "10.jpg",
+  "11.jpg",
+  "12.jpg",
+  "13.jpg",
+  "14.jpg",
+  "15.jpg",
+  "16.jpg",
+  "17.jpg",
 ];
 
 function bgImageChange() {
@@ -34,5 +41,5 @@ function bgImageChange() {
 
 bgImageChange();
 
-// 30분마다 배경 이미지 변경
+// 15분마다 배경 이미지 변경
 setInterval(bgImageChange, 15 * 60 * 1000);
