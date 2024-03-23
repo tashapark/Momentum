@@ -12,7 +12,7 @@ img {
   right: 0px;
   bottom: 0px;
   z-index: -1;
-  opacity: 75%;
+  opacity: 90%;
   background-position: center center;
   overflow: auto;
 }
@@ -153,6 +153,15 @@ iframe playerVars {
 .button2 {
   position: fixed;
   top: 290px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
+
+.button3 {
+  position: fixed;
+  top: 320px;
   right: 20px;
   border: none;
   background: transparent;
