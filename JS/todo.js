@@ -22,21 +22,52 @@ function deleteToDo(event) {
   }
 }
 
+// 페이지가 로드될 때 저장된 todo 리스트를 확인하여 체크박스의 상태를 복원
+window.addEventListener("DOMContentLoaded", () => {
+  const savedToDos = localStorage.getItem(TODOS_KEY);
+  if (savedToDos !== null) {
+    toDos = JSON.parse(savedToDos);
+    // 각 todo 항목에 대해 체크박스 상태를 확인하여 복원
+    toDos.forEach((todo) => {
+      const checkbox = document.getElementById(`checkbox-${todo.id}`);
+      if (checkbox && todo.checked) {
+        checkbox.checked = true;
+        const text = checkbox.nextElementSibling;
+        text.style.textDecorationLine = "line-through";
+      }
+    });
+  }
+});
+
 function checkToDo(event) {
   //체크박스 줄 그어지는 것 만들어주려고
   const checkbox = event.target; //무조건 따로 정의를 해줄 것
   const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
   if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
+    // checkbox.setAttribute("id", "checkedBox"); //id 추가
+    // const myCheckbox = document.getElementById("checkedBox");
+    // myCheckbox.checked = true;
+    //체크박스에 체크 추가되게 하는 것.
   } else {
     text.style.textDecorationLine = "none";
+    // const myCheckbox = document.getElementById("checkedBox");
+    // myCheckbox.checked = false;
   }
-}
+  // 변경된 체크박스 상태를 로컬 스토리지에 저장
+  const todoId = checkbox.parentElement.id; // 부모 요소인 li의 id 가져오기
+  const index = toDos.findIndex((todo) => todo.id.toString() === todoId); // 해당 id를 가진 todo의 인덱스 찾기
+  if (index !== -1) {
+    toDos[index].checked = checkbox.checked; // 해당 todo의 checked 속성 업데이트
+    saveToDos(); // 변경된 todo 리스트를 다시 저장
+  }
+} //...일단 내일해.. 2시다...
 
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
+  checkBox.id = `checkbox-${newTodo.id}`;
   checkBox.addEventListener("change", checkToDo);
   const li = document.createElement("li");
   li.id = newTodo.id; //list id랑 같이
@@ -76,25 +107,3 @@ if (savedToDos !== null) {
   parsedToDos.forEach(paintToDo); // 배열 각각의 항목에 대해 함수 실행 시킴. 항목 개수만큼 실행
   // foreach는 어떤 아이템을 사용하는 지 모르면 의미 없음.
 }
-
-// function sayHello(item) {
-//   console.log("this is the turn of", item);
-// } // arrow function 아니면 걍 이렇게 쓰면 됨.
-//parsedToDos.forEach((item) => console.log("this is the turn of", item));
-// 배열 각각의 항목에 대해 함수 실행 시킴. 항목 개수만큼 실행
-//함수 굳이 안 만들고 치는 방법. => arrow function
-
-// function sexyFilter() {
-//   // 반드시 true를 리턴해야, 새 array에서 object유지 가능.
-//   // false면 제외하고, 나머지만 새 array에 넣음
-// }
-
-// [1, 2, 3, 4].filter(sexyFilter);
-
-// sexyFilter(1); //1
-// sexyFilter(2); //1
-// sexyFilter(3); //1
-// sexyFilter(4); //1
-// // 이렇게 항목 수만큼 4번 실행되고, 다 각자 다른 아이템으로 실행됨.
-// // if 3일 때 false면 [1, 2, 4]만 됨
-//filter 엄청 중요함!!!!!!!!!!!
