@@ -1,4 +1,5 @@
 /* 큰 화면 */
+
 .hidden {
   display: none;
 }
@@ -14,13 +15,13 @@ img {
   z-index: -1;
   opacity: 90%;
   background-position: center center;
-  overflow: auto;
+  overflow: scroll;
 }
 
 body {
   color: whitesmoke;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    "Lucida Sans Unicode", "Nanum Gothic" Geneva, Verdana, sans-serif;
   background-size: cover;
   background-color: black;
   background-attachment: local;
@@ -29,7 +30,7 @@ body {
 #current_date {
   text-align: left;
   margin-bottom: 0;
-  font-family: monospace;
+  font-family: monospace, "Nanum Gothic";
 }
 
 #login-form,
@@ -66,7 +67,7 @@ body {
   padding-top: 35px;
   margin-top: 0;
   margin-bottom: 0;
-  font-family: monospace;
+  font-family: monospace, "Nanum Gothic";
 }
 
 #routine-form {
@@ -189,6 +190,7 @@ ul {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  /* 안티앨리어싱 효과.. 윈도우 안된대 */
 }
 
 iframe {
@@ -251,7 +253,7 @@ iframe playerVars {
   #current_date {
     text-align: left;
     margin-bottom: 0;
-    font-family: monospace;
+    font-family: monospace, "Nanum Gothic";
     font-size: 16px;
   }
 
@@ -289,7 +291,7 @@ iframe playerVars {
     padding-top: 35px;
     margin-top: 0;
     margin-bottom: 0;
-    font-family: monospace;
+    font-family: monospace, "Nanum Gothic";
   }
 
   #routine-form {
@@ -450,7 +452,7 @@ iframe playerVars {
   #current_date {
     text-align: left;
     margin-bottom: 0;
-    font-family: monospace;
+    font-family: monospace, "Nanum Gothic";
     font-size: 13px;
   }
 
@@ -479,7 +481,7 @@ iframe playerVars {
     padding-top: 35px;
     margin-top: 0;
     margin-bottom: 0;
-    font-family: monospace;
+    font-family: monospace, "Nanum Gothic";
   }
 
   #routine-form {
