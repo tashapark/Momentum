@@ -110,6 +110,9 @@ ul {
 #routine-list button {
   font-size: 12px;
   margin-left: 4px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
 }
 
 #routine-list input {
@@ -155,6 +158,9 @@ ul {
 #todo-list button {
   font-size: 14px;
   margin-left: 4px;
+  border: none;
+  background: transparent;
+  color: #bac9e3;
 }
 
 #todo-list input {
@@ -326,6 +332,9 @@ iframe playerVars {
   #routine-list button {
     font-size: 12px;
     margin-left: 4px;
+    border: none;
+    background: transparent;
+    color: #bac9e3;
   }
 
   #routine-list input {
@@ -369,8 +378,11 @@ iframe playerVars {
   }
 
   #todo-list button {
-    font-size: 12px;
+    font-size: 13px;
     margin-left: 4px;
+    border: none;
+    background: transparent;
+    color: #bac9e3;
   }
 
   #todo-list input {
@@ -516,6 +528,9 @@ iframe playerVars {
   #todo-list button {
     font-size: 10px;
     margin-left: 4px;
+    border: none;
+    background: transparent;
+    color: #bac9e3;
   }
 
   #todo-list input {
