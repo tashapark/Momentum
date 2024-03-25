@@ -40,6 +40,15 @@ body {
   font-size: 23px;
 }
 
+#routine-form input,
+#routine-form input::placeholder {
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  text-decoration-line: underline;
+  color: aliceblue;
+}
+
 #login-form input,
 #login-form input::placeholder,
 #todo-form input,
@@ -54,10 +63,58 @@ body {
 #clock {
   text-align: center;
   font-size: 28px;
-  padding-top: 50px;
+  padding-top: 35px;
   margin-top: 0;
   margin-bottom: 0;
   font-family: monospace;
+}
+
+#routine-form {
+  width: 800px;
+  position: fixed;
+  top: 80px;
+  left: 5px;
+  text-align: left;
+  font-size: 15px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#routine-list {
+  position: fixed;
+  top: 120px;
+  left: 5px;
+  width: 155px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: auto;
+  font-size: 14px;
+  height: 165px;
+  background-color: rgba(26, 26, 26, 0.4);
+  border-radius: 12px;
+  padding-left: 12px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#routine-list li {
+  list-style-position: inside;
+  margin: 2px 0;
+  text-align: left;
+}
+
+#routine-list button {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+#routine-list input {
+  margin-right: 10px;
+  /* size 조절하려면 label해야 함 귀찮 */
 }
 
 #todo-form {
@@ -73,13 +130,14 @@ body {
 
 #todo-list {
   margin: 0 auto;
-  width: 430px;
+  text-align: center;
+  width: 410px;
   overflow: auto;
   font-size: 16px;
-  height: 220px;
+  height: 200px;
   padding-top: 10px;
   padding-bottom: 10px;
-  background-color: rgba(26, 26, 26, 0.5);
+  background-color: rgba(26, 26, 26, 0.4);
   border-radius: 12px;
   padding-left: 12px;
 }
@@ -115,12 +173,12 @@ ul {
 }
 
 #quote {
-  margin-top: 10px;
+  margin-top: 55px;
   font-size: 15px;
   font-family: "Nanum Myeongjo", serif;
   line-height: 27px;
   border-radius: 12px;
-  background-color: rgba(26, 26, 26, 0.5);
+  background-color: rgba(26, 26, 26, 0.4);
   display: inline-block;
   padding: 10px;
   padding-left: 20px;
@@ -169,7 +227,21 @@ iframe playerVars {
 }
 
 /* 중간 약 반절 */
-@media (max-width: 750px) {
+@media (max-width: 780px) {
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -1;
+    opacity: 90%;
+    background-position: center center;
+    overflow: auto;
+  }
+
   #current_date {
     text-align: left;
     margin-bottom: 0;
@@ -183,6 +255,15 @@ iframe playerVars {
     top: 5px;
     right: 10px;
     font-size: 22px;
+  }
+
+  #routine-form input,
+  #routine-form input::placeholder {
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    text-decoration-line: underline;
+    color: aliceblue;
   }
 
   #login-form input,
@@ -199,10 +280,57 @@ iframe playerVars {
   #clock {
     text-align: center;
     font-size: 25px;
-    padding-top: 50px;
+    padding-top: 35px;
     margin-top: 0;
     margin-bottom: 0;
     font-family: monospace;
+  }
+
+  #routine-form {
+    width: 800px;
+    position: fixed;
+    top: 80px;
+    left: 5px;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #routine-list {
+    position: fixed;
+    top: 120px;
+    left: 5px;
+    width: 130px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: auto;
+    font-size: 12px;
+    height: 140px;
+    background-color: rgba(26, 26, 26, 0.4);
+    border-radius: 12px;
+    padding-left: 12px;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  #routine-list li {
+    list-style-position: inside;
+    margin: 2px 0;
+    text-align: left;
+  }
+
+  #routine-list button {
+    font-size: 12px;
+    margin-left: 4px;
+  }
+
+  #routine-list input {
+    margin-right: 10px;
+    /* size 조절하려면 label해야 함 귀찮 */
   }
 
   #todo-form {
@@ -217,16 +345,16 @@ iframe playerVars {
   }
 
   #todo-list {
-    margin: 0 auto;
-    width: 300px;
+    margin-left: 30%;
+    width: 280px;
     text-align: center;
     overflow: auto;
     font-size: 14px;
-    height: 160px;
+    height: 140px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 12px;
-    background-color: rgba(26, 26, 26, 0.5);
+    background-color: rgba(26, 26, 26, 0.4);
     border-radius: 12px;
   }
 
@@ -261,12 +389,12 @@ iframe playerVars {
   }
 
   #quote {
-    margin-top: 6px;
+    margin-top: 55px;
     font-size: 14px;
     font-family: "Nanum Myeongjo", serif;
     line-height: 23px;
     border-radius: 12px;
-    background-color: rgba(26, 26, 26, 0.5);
+    background-color: rgba(26, 26, 26, 0.4);
     display: inline-block;
     padding: 10px;
     padding-left: 20px;
@@ -336,10 +464,18 @@ iframe playerVars {
   #clock {
     text-align: center;
     font-size: 20px;
-    padding-top: 40px;
+    padding-top: 35px;
     margin-top: 0;
     margin-bottom: 0;
     font-family: monospace;
+  }
+
+  #routine-form {
+    display: none;
+  }
+
+  #routine-list {
+    display: none;
   }
 
   #todo-form {
@@ -363,7 +499,7 @@ iframe playerVars {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 12px;
-    background-color: rgba(26, 26, 26, 0.5);
+    background-color: rgba(26, 26, 26, 0.4);
     border-radius: 12px;
   }
 
@@ -396,12 +532,12 @@ iframe playerVars {
   }
 
   #quote {
-    margin-top: 6px;
+    margin-top: 10px;
     font-size: 14px;
     font-family: "Nanum Myeongjo", serif;
     line-height: 23px;
     border-radius: 12px;
-    background-color: rgba(26, 26, 26, 0.5);
+    background-color: rgba(26, 26, 26, 0.4);
     display: inline-block;
     padding: 10px;
     padding-left: 20px;
