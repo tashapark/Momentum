@@ -26,7 +26,7 @@ playlistForm.classList.add(HIDDEN_TOGGLE);
 // playlist입력 버튼 만들기
 const buttonSubmit = document.createElement("button");
 buttonSubmit.classList.add("buttonSubmit"); //for css
-buttonSubmit.innerText = "playlist 입력";
+buttonSubmit.innerText = "playlist 입력 🚧 수정중 🚧";
 buttonSubmit.addEventListener("click", playlistButtonToggle);
 document.body.appendChild(buttonSubmit);
 
