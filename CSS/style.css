@@ -234,6 +234,23 @@ iframe playerVars {
   color: aliceblue;
 }
 
+.button4 {
+  position: fixed;
+  top: 350px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
+
+.button5 {
+  position: fixed;
+  top: 380px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
 /* 중간 약 반절 */
 @media (max-width: 780px) {
   img {
@@ -445,6 +462,30 @@ iframe playerVars {
     background: transparent;
     color: aliceblue;
   }
+  .button3 {
+    position: fixed;
+    top: 220px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+  }
+  .button4 {
+    position: fixed;
+    top: 250px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+  }
+  .button5 {
+    position: fixed;
+    top: 280px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+  }
 }
 /* 폰?? 작게   */
 
@@ -574,6 +615,15 @@ iframe playerVars {
   }
 
   .button2 {
+    display: none;
+  }
+  .button3 {
+    display: none;
+  }
+  .button4 {
+    display: none;
+  }
+  .button5 {
     display: none;
   }
 }
