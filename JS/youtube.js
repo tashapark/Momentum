@@ -7,36 +7,63 @@ const HIDDEN_TOGGLE = "hidden";
 const VIDEO_ID = "userVideo";
 const PL_ID = "userPL";
 
-//입력 버튼이 보이게
-const buttonSubmit = document.createElement("button");
-buttonSubmit.classList.add("buttonSubmit");
-buttonSubmit.innerText = "playlist 입력";
-buttonSubmit.addEventListener("click", playlistButtonToggle);
-
-document.body.appendChild(buttonSubmit);
-
-function playlistButtonToggle() {
-  videoForm.classList.toggle(HIDDEN_TOGGLE);
-  playlistForm.classList.toggle(HIDDEN_TOGGLE);
-}
-
-function handleUserSubmit(event) {
-  event.preventDefault();
-}
-
-// 2. 이 코드는 Iframe Player API를 비동기적으로 로드한다. !!필수!!
-const tag = document.createElement("script");
-
-tag.src = "https://www.youtube.com/iframe_api";
-const firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
 // 3. API 코드를 다운로드 받은 다음에 <iframe>을 생성하는 기능 (youtube player도 더불어)
 let player1; //asmr
 let player2; //플브
 let player3; // 밴드
 let player4; // 예준 플리
 let player5; // user
+// 2. 이 코드는 Iframe Player API를 비동기적으로 로드한다. !!필수!!
+const tag = document.createElement("script");
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName("script")[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+//입력 버튼누르면 플리 입력창 보이게
+videoForm.classList.add(HIDDEN_TOGGLE);
+playlistForm.classList.add(HIDDEN_TOGGLE);
+
+// playlist입력 버튼 만들기
+const buttonSubmit = document.createElement("button");
+buttonSubmit.classList.add("buttonSubmit"); //for css
+buttonSubmit.innerText = "playlist 입력";
+buttonSubmit.addEventListener("click", playlistButtonToggle);
+document.body.appendChild(buttonSubmit);
+
+function playlistButtonToggle() {
+  videoForm.classList.toggle(HIDDEN_TOGGLE);
+  playlistForm.classList.toggle(HIDDEN_TOGGLE);
+
+  const savedUserVideo = localStorage.getItem(VIDEO_ID);
+  const savedUserPL = localStorage.getItem(PL_ID);
+
+  if (savedUserVideo === null && savedUserPL === null) {
+    // LS 에 없으면 form 보여주기
+    alert(
+      `1. 유튜브에서 재생 목록 만들기
+    2. 재생 목록을 비공개 --> 공개로 전환 
+    3. 화면의 url 링크 창을 확인하면 v="여기서 & 앞까지 복사" --> video-ID
+    4. 화면의 url 링크 창을 확인하면 list="끝까지 혹은 재생 중이면 & 앞까지 복사" ---> PL-ID
+    5. 엔터 치기 
+    6. 이후부터의 재생목록 수정은 유튜브 해당 재생목록에서 가능
+    7. 수정 이후에 페이지 새로고침 할 것 :)`
+    );
+  }
+}
+
+//LS저장, 입력
+function onUserPlaylistSubmit(event) {
+  event.preventDefault();
+
+  const userPL = playlistInput.value;
+  const userVideo = videoInput.value;
+  localStorage.setItem(VIDEO_ID, userVideo);
+  localStorage.setItem(PL_ID, userPL);
+  onYouTubeIframeAPIReady();
+}
+
+videoForm.addEventListener("submit", onUserPlaylistSubmit); //유저이름 입력할 수 있도록
+playlistForm.addEventListener("submit", onUserPlaylistSubmit); //유저이름 입력할 수 있도록
 
 function onYouTubeIframeAPIReady() {
   player1 = new YT.Player("player1", {
@@ -65,7 +92,7 @@ function onYouTubeIframeAPIReady() {
       },
     },
   });
-  player1.getIframe().classList.add("hidden");
+  player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
     videoId: "Mya0LYrRgX4", //변경-영상ID //가끔 연락하던 애
@@ -89,7 +116,7 @@ function onYouTubeIframeAPIReady() {
       },
     },
   });
-  player2.getIframe().classList.add("hidden");
+  player2.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player3 = new YT.Player("player3", {
     videoId: "RowlrvmyFEk", //변경-영상ID //웰컴 투더쇼
@@ -113,7 +140,7 @@ function onYouTubeIframeAPIReady() {
       },
     },
   });
-  player3.getIframe().classList.add("hidden");
+  player3.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player4 = new YT.Player("player4", {
     videoId: "hlrP9GXTx8", //변경-영상ID //다이브 인투 유
@@ -137,31 +164,36 @@ function onYouTubeIframeAPIReady() {
       },
     },
   });
-  player4.getIframe().classList.add("hidden");
+  player4.getIframe().classList.add(HIDDEN_TOGGLE);
 
-  player5 = new YT.Player("player5", {
-    videoId: `${VIDEO_ID}`, //변경-영상ID //웰컴 투더쇼
-    playerVars: {
-      rel: 1, //연관동영상 표시여부(0:표시안함)
-      controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
-      autoplay: 1, //자동재생 여부(1:자동재생 함, mute와 함께 설정)
-      mute: 1, //음소거여부(1:음소거 함)
-      loop: 1, //반복재생여부(1:반복재생 함)
-      playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
-      list: `${PL_ID}`, //봄은 밴드지
-      setShuffle: 1,
-      //재생할 영상 리스트 //
-      color: "white",
-      enablejsapi: 1,
-      disablekb: 0,
+  const savedUserVideo = localStorage.getItem(VIDEO_ID);
+  const savedUserPL = localStorage.getItem(PL_ID);
 
-      events: {
-        onReady: onPlayerReady, //onReady 상태일 때 작동하는 function이름
-        onStateChange: onPlayerStateChange, //onStateChange 상태일 때 작동하는 function이름
+  if (savedUserVideo !== null && savedUserPL !== null) {
+    player5 = new YT.Player("player5", {
+      videoId: savedUserVideo, //변경-영상ID //유저입력
+      playerVars: {
+        rel: 1, //연관동영상 표시여부(0:표시안함)
+        controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
+        autoplay: 1, //자동재생 여부(1:자동재생 함, mute와 함께 설정)
+        mute: 1, //음소거여부(1:음소거 함)
+        loop: 1, //반복재생여부(1:반복재생 함)
+        playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
+        list: savedUserPL, //유저플리
+        setShuffle: 1,
+        //재생할 영상 리스트 //
+        color: "white",
+        enablejsapi: 1,
+        disablekb: 0,
+
+        events: {
+          onReady: onPlayerReady, //onReady 상태일 때 작동하는 function이름
+          onStateChange: onPlayerStateChange, //onStateChange 상태일 때 작동하는 function이름
+        },
       },
-    },
-  });
-  player5.getIframe().classList.add("hidden");
+    });
+    player5.getIframe().classList.add(HIDDEN_TOGGLE);
+  }
 }
 
 // 5. API는 플레이어의 상태가 변화될 때 아래의 function을 불러올 것이다.
@@ -181,6 +213,7 @@ function stopVideo() {
   if (player2) player2.stopVideo();
   if (player3) player3.stopVideo();
   if (player4) player4.stopVideo();
+  if (player5) player5.stopVideo();
 }
 
 // 6. 버튼 생성 및 이벤트 핸들러 함수
