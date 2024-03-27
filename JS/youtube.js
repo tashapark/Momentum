@@ -26,7 +26,7 @@ playlistForm.classList.add(HIDDEN_TOGGLE);
 // playlist입력 버튼 만들기
 const buttonSubmit = document.createElement("button");
 buttonSubmit.classList.add("buttonSubmit"); //for css
-buttonSubmit.innerText = "playlist 입력 🚧 수정중 🚧";
+buttonSubmit.innerText = "playlist 입력";
 buttonSubmit.addEventListener("click", playlistButtonToggle);
 document.body.appendChild(buttonSubmit);
 
@@ -37,17 +37,12 @@ function playlistButtonToggle() {
   const savedUserVideo = localStorage.getItem(VIDEO_ID);
   const savedUserPL = localStorage.getItem(PL_ID);
 
-  if (savedUserVideo === null && savedUserPL === null) {
+  if (savedUserVideo === null || savedUserPL === null) {
     // LS 에 없으면 form 보여주기
-    alert(
-      `1. 유튜브에서 재생 목록 만들기
-    2. 재생 목록을 비공개 --> 공개로 전환 
-    3. 화면의 url 링크 창을 확인하면 v="여기서 & 앞까지 복사" --> video-ID
-    4. 화면의 url 링크 창을 확인하면 list="끝까지 혹은 재생 중이면 & 앞까지 복사" ---> PL-ID
-    5. 엔터 치기 
-    6. 이후부터의 재생목록 수정은 유튜브 해당 재생목록에서 가능
-    7. 수정 이후에 페이지 새로고침 할 것 :)`
+    window.open(
+      "https://tashapark.tistory.com/entry/Momentum-%EB%82%98%EB%A7%8C%EC%9D%98-Youtube-Playlist-%EB%84%A3%EA%B8%B0-%EA%B0%80%EC%9D%B4%EB%93%9C"
     );
+    alert(`ID를 입력해주세요.`);
   }
 }
 
@@ -56,7 +51,9 @@ function onUserPlaylistSubmit(event) {
   event.preventDefault();
 
   const userPL = playlistInput.value;
+  playlistInput.value = "";
   const userVideo = videoInput.value;
+  videoInput.value = "";
   localStorage.setItem(VIDEO_ID, userVideo);
   localStorage.setItem(PL_ID, userPL);
   onYouTubeIframeAPIReady();

@@ -31,6 +31,7 @@ body {
   text-align: left;
   margin-bottom: 0;
   font-family: monospace, "Nanum Gothic";
+  font-size: 23px;
 }
 
 #login-form,
@@ -251,6 +252,42 @@ iframe playerVars {
   background: transparent;
   color: aliceblue;
 }
+#video-form {
+  position: fixed;
+  top: 420px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
+#playlist-form {
+  position: fixed;
+  top: 450px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+}
+
+.buttonSubmit {
+  position: fixed;
+  top: 480px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: #bac9e3;
+}
+#video-form input,
+#video-form input::placeholder,
+#playlist-form input,
+#playlist-form input::placeholder {
+  font-size: 15px;
+  border: none;
+  background: transparent;
+  text-decoration-line: underline;
+  color: aliceblue;
+}
+
 /* 중간 약 반절 */
 @media (max-width: 780px) {
   img {
@@ -486,6 +523,42 @@ iframe playerVars {
     background: transparent;
     color: aliceblue;
   }
+
+  #video-form {
+    position: fixed;
+    top: 320px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+  }
+  #playlist-form {
+    position: fixed;
+    top: 350px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+  }
+
+  .buttonSubmit {
+    position: fixed;
+    top: 380px;
+    right: 20px;
+    border: none;
+    background: transparent;
+    color: #bac9e3;
+  }
+  #video-form input,
+  #video-form input::placeholder,
+  #playlist-form input,
+  #playlist-form input::placeholder {
+    font-size: 15px;
+    border: none;
+    background: transparent;
+    text-decoration-line: underline;
+    color: aliceblue;
+  }
 }
 /* 폰?? 작게   */
 
@@ -624,6 +697,17 @@ iframe playerVars {
     display: none;
   }
   .button5 {
+    display: none;
+  }
+
+  #video-form {
+    display: none;
+  }
+  #playlist-form {
+    display: none;
+  }
+
+  .buttonSubmit {
     display: none;
   }
 }
