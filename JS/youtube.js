@@ -7,6 +7,10 @@ const HIDDEN_TOGGLE = "hidden";
 const VIDEO_ID = "userVideo";
 const PL_ID = "userPL";
 
+//LS 저장된 값 불러오기
+let savedUserVideo = localStorage.getItem(VIDEO_ID);
+let savedUserPL = localStorage.getItem(PL_ID);
+
 // 3. API 코드를 다운로드 받은 다음에 <iframe>을 생성하는 기능 (youtube player도 더불어)
 let player1; //asmr
 let player2; //플브
@@ -31,17 +35,17 @@ buttonSubmit.addEventListener("click", playlistButtonToggle);
 document.body.appendChild(buttonSubmit);
 
 function playlistButtonToggle() {
+  window.open(
+    "https://tashapark.tistory.com/entry/Momentum-%EB%82%98%EB%A7%8C%EC%9D%98-Youtube-Playlist-%EB%84%A3%EA%B8%B0-%EA%B0%80%EC%9D%B4%EB%93%9C"
+  );
   videoForm.classList.toggle(HIDDEN_TOGGLE);
   playlistForm.classList.toggle(HIDDEN_TOGGLE);
 
-  const savedUserVideo = localStorage.getItem(VIDEO_ID);
-  const savedUserPL = localStorage.getItem(PL_ID);
+  savedUserVideo = localStorage.getItem(VIDEO_ID);
+  savedUserPL = localStorage.getItem(PL_ID);
 
   if (savedUserVideo === null || savedUserPL === null) {
     // LS 에 없으면 form 보여주기
-    window.open(
-      "https://tashapark.tistory.com/entry/Momentum-%EB%82%98%EB%A7%8C%EC%9D%98-Youtube-Playlist-%EB%84%A3%EA%B8%B0-%EA%B0%80%EC%9D%B4%EB%93%9C"
-    );
     alert(`ID를 입력해주세요.`);
   }
 }
