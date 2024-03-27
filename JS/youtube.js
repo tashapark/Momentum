@@ -7,7 +7,7 @@ const HIDDEN_TOGGLE = "hidden";
 const VIDEO_ID = "userVideo";
 const PL_ID = "userPL";
 
-//LS 저장된 값 불러오기
+//LS 저장된 값 불러오기 -> 수정되게 만들기 위해서 전역 변수로 선언하면, 굳이 지웠다 저장다시 안 해도 가능 !!
 let savedUserVideo = localStorage.getItem(VIDEO_ID);
 let savedUserPL = localStorage.getItem(PL_ID);
 
