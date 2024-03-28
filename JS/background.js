@@ -53,5 +53,5 @@ function bgImageChange() {
 
 bgImageChange();
 
-// 15분마다 배경 이미지 변경
-setInterval(bgImageChange, 15 * 60 * 1000);
+// 30분마다 배경 이미지 변경
+setInterval(bgImageChange, 30 * 60 * 1000);

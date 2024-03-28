@@ -295,4 +295,4 @@ function quoteChange() {
 quoteChange();
 
 // 30분마다 quote 변경
-setInterval(quoteChange, 15 * 60 * 1000);
+setInterval(quoteChange, 30 * 60 * 1000);
