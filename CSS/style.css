@@ -330,12 +330,30 @@ iframe playerVars {
     font-size: 16px;
   }
 
-  #login-form,
+  #login-form input {
+    text-align: right;
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    margin-right: 30px;
+    font-size: 20px;
+  }
   #greeting {
     position: fixed;
+    margin-top: 14.74;
     top: 5px;
     right: 10px;
-    font-size: 22px;
+    margin-right: 30px;
+    font-size: 20px;
+  }
+
+  .buttonRename {
+    font-size: 15px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    border: none;
+    background: transparent;
   }
 
   #routine-form input,
@@ -579,6 +597,7 @@ iframe playerVars {
     color: aliceblue;
   }
 }
+
 /* 폰?? 작게   */
 
 @media (max-width: 400px) {
@@ -589,12 +608,30 @@ iframe playerVars {
     font-size: 13px;
   }
 
-  #login-form,
+  #login-form input {
+    text-align: right;
+    position: fixed;
+    top: 17px;
+    right: 10px;
+    margin-right: 30px;
+    font-size: 16px;
+  }
   #greeting {
     position: fixed;
-    top: 0;
+    margin-top: 14.74;
+    top: 5px;
     right: 10px;
-    font-size: 20px;
+    margin-right: 30px;
+    font-size: 16px;
+  }
+
+  .buttonRename {
+    font-size: 14px;
+    position: fixed;
+    top: 15px;
+    right: 10px;
+    border: none;
+    background: transparent;
   }
 
   #login-form input,
