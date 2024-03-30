@@ -275,6 +275,29 @@ const quotes = [
     햇살을 기다릴 희망을 싹틔운다`,
     author: `숲과 바람과 비 ASMR, 낮잠 NZ Ambience `,
   },
+  {
+    quote: `Don't be afraid of big waves,
+    Calm like the ocean.`,
+    author: ``,
+  },
+  {
+    quote: `알아 
+    너의 결정이 쉽지 않았을 거야
+    후회 없게 하는 건 이제 나의 몫이야
+    
+    끝까지 같이 함께 가겠다면
+    If so, then let's go
+    Welcome to the show`,
+    author: `Welcome to the show - DAY6`,
+  },
+  {
+    quote: `환한 네 미소처럼
+    넌 나를 빛나게 해
+    존재만으로
+
+    Bless you`,
+    author: `존재만으로 - 원슈타인`,
+  },
 ];
 
 function quoteChange() {
