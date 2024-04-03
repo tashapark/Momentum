@@ -70,7 +70,7 @@ playlistForm.addEventListener("submit", onUserPlaylistSubmit); //유저이름 �
 
 function onYouTubeIframeAPIReady() {
   player1 = new YT.Player("player1", {
-    videoId: "gWfFWVQW13E", //변경-영상ID //리스본 카페.
+    videoId: "pC2ivw3Ngwg", //변경-영상ID //여름감성.
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
