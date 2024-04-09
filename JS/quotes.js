@@ -313,8 +313,15 @@ const quotes = [
   {
     quote: `The definition of anger is 
     an emotional punishment you give yourself
-    somebody else's behavior."`,
+    somebody else's behavior.`,
     author: `Troy Blyden`,
+  },
+  {
+    quote: `겁도 없이 난 사랑에 빠졌다
+  아마 잠깐 수줍고 오래 아리겠구나
+  겁도 없이 맘의 반을 건넸다
+  마지막 장면의 난 어떤 표정 지을까`,
+    author: `겁도 없이 - B.I`,
   },
 ];
 
