@@ -98,7 +98,7 @@ function onYouTubeIframeAPIReady() {
   player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
-    videoId: "EpUaeLOLZ_w", //변경-영상ID //걘 아니야 ^^
+    videoId: "ZBl48MK17cI", //변경-영상ID //츄
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
@@ -227,7 +227,7 @@ button1.addEventListener("click", playlistButton1);
 
 const button2 = document.createElement("button");
 button2.classList.add("button2");
-button2.innerText = "플브 💙💜💗❤️🖤";
+button2.innerText = "사랑하는 노래들 🫶🎶";
 button2.addEventListener("click", playlistButton2);
 
 const button3 = document.createElement("button");
