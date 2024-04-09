@@ -298,6 +298,24 @@ const quotes = [
     Bless you`,
     author: `존재만으로 - 원슈타인`,
   },
+  {
+    quote: `"재즈에 열정이 크니까. 사람들이 올 거야. 
+    사람들은 다른 사람들의 열정에 끌리게 되어있어. 
+    자신이 잊은 걸 상기시켜 주니까."`,
+    author: `라라랜드, 2016`,
+  },
+  {
+    quote: `"그냥 흘러가는 대로 가보자."
+    "언제나 자길 사랑할 거야."
+    "나도 항상 사랑할 거야."  `,
+    author: `라라랜드, 2016`,
+  },
+  {
+    quote: `The definition of anger is 
+    an emotional punishment you give yourself
+    somebody else's behavior."`,
+    author: `Troy Blyden`,
+  },
 ];
 
 function quoteChange() {
