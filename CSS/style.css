@@ -141,6 +141,10 @@ ul {
   text-align: left;
 }
 
+#routine-list li:hover {
+  text-decoration-line: underline;
+}
+
 #routine-list button {
   font-size: 12px;
   margin-left: 4px;
@@ -175,6 +179,10 @@ ul {
   padding: 10px 10px;
   background-color: rgba(26, 26, 26, 0.4);
   border-radius: 15px;
+}
+
+#todo-list li:hover {
+  text-decoration-line: underline;
 }
 
 ul {
@@ -297,7 +305,7 @@ iframe playerVars {
 .button4:hover,
 .button5:hover,
 .buttonSubmit:hover {
-  color: olivedrab;
+  color: steelblue;
   background-color: aliceblue;
   border: none;
   border-radius: 15px;
@@ -310,7 +318,7 @@ iframe playerVars {
 .button4:focus,
 .button5:focus,
 .buttonSubmit:focus {
-  color: steelblue;
+  color: olivedrab;
   background-color: aliceblue;
   border: none;
   border-radius: 15px;
