@@ -73,6 +73,13 @@ body {
   background: transparent;
 }
 
+.buttonRename:hover {
+  background-color: aliceblue;
+  border: none;
+  border-radius: 15px;
+  padding: 2px 6px;
+}
+
 #routine-form input,
 #routine-form input::placeholder {
   font-size: 15px;
@@ -91,10 +98,6 @@ body {
   background: transparent;
   text-decoration-line: underline;
   color: aliceblue;
-}
-
-.button1:hover {
-  color: #a4c6ab;
 }
 
 #clock {
@@ -673,9 +676,9 @@ iframe playerVars {
   }
 
   .buttonRename {
-    font-size: 13px;
+    font-size: 11px;
     position: fixed;
-    top: 15px;
+    top: 11px;
     right: 10px;
     border: none;
     background: transparent;
