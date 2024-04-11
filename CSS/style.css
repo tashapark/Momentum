@@ -93,6 +93,10 @@ body {
   color: aliceblue;
 }
 
+.button1:hover {
+  color: #a4c6ab;
+}
+
 #clock {
   text-align: center;
   font-size: 28px;
@@ -231,36 +235,48 @@ iframe playerVars {
   position: fixed;
   top: 260px;
   right: 10px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
   background: transparent;
   color: aliceblue;
+  transition: transform 0.3s ease-in-out;
 }
 
 .button2 {
   position: fixed;
   top: 290px;
   right: 10px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
   background: transparent;
   color: aliceblue;
+  transition: transform 0.3s ease-in-out;
 }
 
 .button3 {
   position: fixed;
   top: 320px;
   right: 10px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
   background: transparent;
   color: aliceblue;
+  transition: transform 0.3s ease-in-out;
 }
 
 .button4 {
   position: fixed;
   top: 350px;
   right: 10px;
+  font-size: 12px;
+  font-weight: 600;
   border: none;
   background: transparent;
   color: aliceblue;
+  transition: transform 0.3s ease-in-out;
 }
 
 .button5 {
@@ -268,8 +284,37 @@ iframe playerVars {
   top: 380px;
   right: 10px;
   border: none;
+  font-size: 12px;
+  font-weight: 600;
   background: transparent;
   color: aliceblue;
+  transition: transform 0.3s ease-in-out;
+}
+
+.button1:hover,
+.button2:hover,
+.button3:hover,
+.button4:hover,
+.button5:hover,
+.buttonSubmit:hover {
+  color: olivedrab;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 15px;
+  padding: 2px 6px;
+}
+
+.button1:focus,
+.button2:focus,
+.button3:focus,
+.button4:focus,
+.button5:focus,
+.buttonSubmit:focus {
+  color: steelblue;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 15px;
+  padding: 2px 6px;
 }
 #video-form {
   position: fixed;
@@ -293,8 +338,11 @@ iframe playerVars {
   top: 480px;
   right: 10px;
   border: none;
+  font-weight: 600;
+  font-size: 12px;
   background: transparent;
   color: #bac9e3;
+  transition: transform 0.3s ease-in-out;
 }
 #video-form input,
 #video-form input::placeholder,
