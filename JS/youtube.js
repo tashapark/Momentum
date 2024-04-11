@@ -47,7 +47,8 @@ function playlistButtonToggle() {
   if (savedUserVideo === null || savedUserPL === null) {
     // LS 에 없으면 form 보여주기
     alert(
-      `새 창으로 열린 블로그의 가이드에 따라서 각각의 ID를 입력해주세요 :)`
+      `새 창으로 열린 블로그의 가이드에 따라서 각각의 ID를 입력하고 엔터를 쳐주세요 :)
+      입력 후에는 버튼을 한 번 더 눌러서 ID칸을 안 보이게 할 수 있어요!`
     );
   }
 }
