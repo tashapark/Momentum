@@ -58,10 +58,6 @@ window.addEventListener("DOMContentLoaded", () => {
         text.style.textDecorationLine = "line-through";
       }
     });
-    toDos = moveCheckedToEnd(toDos); // 여기서 함수 호출하여 작동하도록 추가
-    // 변경된 리스트를 다시 그리도록 수정
-    // 이후에 saveToDos 함수 호출하여 변경된 리스트를 다시 저장
-    saveToDos();
   }
 });
 
@@ -77,10 +73,6 @@ window.addEventListener("DOMContentLoaded", () => {
         text.style.textDecorationLine = "line-through";
       }
     });
-    routineToDos = moveCheckedToEnd(routineToDos); // 여기서 함수 호출하여 작동하도록 추가
-    // 변경된 리스트를 다시 그리도록 수정
-    // 이후에 saveRoutines 함수 호출하여 변경된 리스트를 다시 저장
-    saveRoutines();
   }
 });
 
@@ -98,23 +90,13 @@ function checkToDo(event) {
   const index = toDos.findIndex((todo) => todo.id.toString() === todoId); // 해당 id를 가진 todo의 인덱스 찾기
   if (index !== -1) {
     toDos[index].checked = checkbox.checked; // 해당 todo의 checked 속성 업데이트
+
+    if (checkbox.checked) {
+      const checkedItem = toDos.splice(index, 1)[0]; //index 위치의 1개를 제거하되, [0] 제거한 인덱스의 1번째 즉 제거한 것 반환
+      toDos.push(checkedItem);
+    }
     saveToDos(); // 변경된 todo 리스트를 다시 저장
   }
-}
-
-function moveCheckedToEnd(toDos) {
-  let checkedItems = []; //새로 만들고
-  for (let i = 0; i < toDos.length; i++) {
-    //루프
-    if (toDos[i].checked) {
-      checkedItems.push(toDos[i]); //만든 것에 넣고
-      toDos.splice(i, 1); //checked된 것 제거
-      i--; // 인덱스를 한 칸 씩 당기기.
-    }
-  }
-  toDos.push(...checkedItems);
-  saveToDos(); // 변경된 todo 리스트를 다시 저장
-  return toDos;
 }
 
 function checkRoutines(event) {
@@ -132,6 +114,10 @@ function checkRoutines(event) {
   );
   if (index !== -1) {
     routineToDos[index].checked = checkbox.checked;
+    if (checkbox.checked) {
+      const checkedItem = routineToDos.splice(index, 1)[0];
+      routineToDos.push(checkedItem);
+    }
     saveRoutines();
   }
 }
