@@ -58,6 +58,10 @@ window.addEventListener("DOMContentLoaded", () => {
         text.style.textDecorationLine = "line-through";
       }
     });
+    toDos = moveCheckedToEnd(toDos); // 여기서 함수 호출하여 작동하도록 추가
+    // 변경된 리스트를 다시 그리도록 수정
+    // 이후에 saveToDos 함수 호출하여 변경된 리스트를 다시 저장
+    saveToDos();
   }
 });
 
@@ -73,6 +77,10 @@ window.addEventListener("DOMContentLoaded", () => {
         text.style.textDecorationLine = "line-through";
       }
     });
+    routineToDos = moveCheckedToEnd(routineToDos); // 여기서 함수 호출하여 작동하도록 추가
+    // 변경된 리스트를 다시 그리도록 수정
+    // 이후에 saveRoutines 함수 호출하여 변경된 리스트를 다시 저장
+    saveRoutines();
   }
 });
 
@@ -92,6 +100,21 @@ function checkToDo(event) {
     toDos[index].checked = checkbox.checked; // 해당 todo의 checked 속성 업데이트
     saveToDos(); // 변경된 todo 리스트를 다시 저장
   }
+}
+
+function moveCheckedToEnd(toDos) {
+  let checkedItems = []; //새로 만들고
+  for (let i = 0; i < toDos.length; i++) {
+    //루프
+    if (toDos[i].checked) {
+      checkedItems.push(toDos[i]); //만든 것에 넣고
+      toDos.splice(i, 1); //checked된 것 제거
+      i--; // 인덱스를 한 칸 씩 당기기.
+    }
+  }
+  toDos.push(...checkedItems);
+  saveToDos(); // 변경된 todo 리스트를 다시 저장
+  return toDos;
 }
 
 function checkRoutines(event) {
