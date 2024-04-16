@@ -455,7 +455,7 @@ iframe playerVars {
     position: fixed;
     top: 150px;
     left: 5px;
-    width: 130px;
+    width: 140px;
     padding: 10px 10px;
     overflow: auto;
     font-size: 12px;
@@ -498,7 +498,7 @@ iframe playerVars {
 
   #todo-list {
     margin-left: 30%;
-    width: 280px;
+    width: 290px;
     height: 200px;
     text-align: center;
     overflow: auto;
