@@ -2,13 +2,11 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const toDoDeleteBtn = document.querySelector(".todo__btn__delete");
-const toDoReloadBtn = document.querySelector(".todo__btn__reload");
 
 const routineForm = document.getElementById("routine-form");
 const routineInput = routineForm.querySelector("#routine-form input");
 const routineList = document.getElementById("routine-list");
 const routineDeleteBtn = document.querySelector(".routine__btn__delete");
-const routineReloadBtn = document.querySelector(".routine__btn__reload");
 
 const TODOS_KEY = "todos";
 const ROUTINE_KEY = "routines";
@@ -34,7 +32,6 @@ function deleteToDo(event) {
     //여기는 배열이 아니라서 length.. 사용 gpt천재
     toDoList.classList.add(HIDDEN_CLASS);
     toDoDeleteBtn.classList.add(HIDDEN_CLASS);
-    toDoReloadBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -48,7 +45,6 @@ function deleteRoutines(event) {
   if (routineToDos.length === 0) {
     routineList.classList.add(HIDDEN_CLASS);
     routineDeleteBtn.classList.add(HIDDEN_CLASS);
-    routineReloadBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -88,14 +84,22 @@ function checkToDo(event) {
   //체크박스 줄 그어지는 것 만들어주려고
   const checkbox = event.target; //무조건 따로 정의를 해줄 것
   const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
+  const li = checkbox.parentElement; // li 요소를 가져옵니다.
 
+  // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
+  if (checkbox.checked) {
+    // 목록에서 해당 li 요소를 삭제합니다.
+    toDoList.removeChild(li);
+    // 목록의 마지막에 다시 추가합니다.
+    toDoList.appendChild(li);
+  }
   if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
   } else {
     text.style.textDecorationLine = "none";
   }
   // 변경된 체크박스 상태를 로컬 스토리지에 저장
-  const todoId = checkbox.parentElement.id; // 부모 요소인 li의 id 가져오기
+  const todoId = li.id; // 부모 요소인 li의 id 가져오기
   const index = toDos.findIndex((todo) => todo.id.toString() === todoId); // 해당 id를 가진 todo의 인덱스 찾기
   if (index !== -1) {
     toDos[index].checked = checkbox.checked; // 해당 todo의 checked 속성 업데이트
@@ -111,13 +115,22 @@ function checkToDo(event) {
 function checkRoutines(event) {
   const checkbox = event.target;
   const text = checkbox.nextElementSibling;
+  const li = checkbox.parentElement; // li 요소를 가져옵니다.
+
+  // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
+  if (checkbox.checked) {
+    // 목록에서 해당 li 요소를 삭제합니다.
+    routineList.removeChild(li);
+    // 목록의 마지막에 다시 추가합니다.
+    routineList.appendChild(li);
+  }
   if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
   } else {
     text.style.textDecorationLine = "none";
   }
 
-  const routineId = checkbox.parentElement.id;
+  const routineId = li.id;
   const index = routineToDos.findIndex(
     (routine) => routine.id.toString() === routineId
   );
@@ -160,18 +173,10 @@ function deleteCheckedRoutine() {
 }
 
 toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
-routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
-
-function reloadTodo() {
-  toDoList.reload();
-}
-
-toDoReloadBtn.addEventListener("click", reloadTodo);
 
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
   toDoDeleteBtn.classList.remove(HIDDEN_CLASS);
-  toDoReloadBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newTodo.id}`;
@@ -192,7 +197,6 @@ function paintToDo(newTodo) {
 function paintRoutine(newRoutine) {
   routineList.classList.remove(HIDDEN_CLASS);
   routineDeleteBtn.classList.remove(HIDDEN_CLASS);
-  routineReloadBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newRoutine.id}`;
