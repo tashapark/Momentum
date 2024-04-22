@@ -1,10 +1,14 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+const toDoDeleteBtn = document.querySelector(".todo__btn__delete");
+const toDoReloadBtn = document.querySelector(".todo__btn__reload");
 
 const routineForm = document.getElementById("routine-form");
 const routineInput = routineForm.querySelector("#routine-form input");
 const routineList = document.getElementById("routine-list");
+const routineDeleteBtn = document.querySelector(".routine__btn__delete");
+const routineReloadBtn = document.querySelector(".routine__btn__reload");
 
 const TODOS_KEY = "todos";
 const ROUTINE_KEY = "routines";
@@ -29,6 +33,8 @@ function deleteToDo(event) {
   if (toDos.length === 0) {
     //여기는 배열이 아니라서 length.. 사용 gpt천재
     toDoList.classList.add(HIDDEN_CLASS);
+    toDoDeleteBtn.classList.add(HIDDEN_CLASS);
+    toDoReloadBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -41,6 +47,8 @@ function deleteRoutines(event) {
   saveRoutines();
   if (routineToDos.length === 0) {
     routineList.classList.add(HIDDEN_CLASS);
+    routineDeleteBtn.classList.add(HIDDEN_CLASS);
+    routineReloadBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -80,6 +88,7 @@ function checkToDo(event) {
   //체크박스 줄 그어지는 것 만들어주려고
   const checkbox = event.target; //무조건 따로 정의를 해줄 것
   const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
+
   if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
   } else {
@@ -122,8 +131,47 @@ function checkRoutines(event) {
   }
 }
 
+function deleteCheckedTodo() {
+  const checkboxes = document.querySelectorAll(
+    "#todo-list input[type='checkbox']:checked"
+  );
+  checkboxes.forEach((checkbox) => {
+    const li = checkbox.parentElement;
+    li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+  });
+
+  saveToDos();
+}
+
+function deleteCheckedRoutine() {
+  const routineCheckboxes = document.querySelectorAll(
+    "#routine-list input[type='checkbox']:checked"
+  );
+  routineCheckboxes.forEach((checkbox) => {
+    const li = checkbox.parentElement;
+    li.remove();
+    routineToDos = routineToDos.filter(
+      (routine) => routine.id !== parseInt(li.id)
+    );
+  });
+
+  saveRoutines();
+}
+
+toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
+routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
+
+function reloadTodo() {
+  toDoList.reload();
+}
+
+toDoReloadBtn.addEventListener("click", reloadTodo);
+
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
+  toDoDeleteBtn.classList.remove(HIDDEN_CLASS);
+  toDoReloadBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newTodo.id}`;
@@ -143,6 +191,8 @@ function paintToDo(newTodo) {
 
 function paintRoutine(newRoutine) {
   routineList.classList.remove(HIDDEN_CLASS);
+  routineDeleteBtn.classList.remove(HIDDEN_CLASS);
+  routineReloadBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newRoutine.id}`;

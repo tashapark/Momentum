@@ -36,7 +36,15 @@
         placeholder="Routines & Press Enter."
       />
     </form>
-    <ul id="routine-list" class="hidden"></ul>
+    <div class="routine">
+      <ul id="routine-list" class="hidden"></ul>
+      <button class="routine__btn__reload hidden">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+      <button class="routine__btn__delete hidden">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
 
     <div id="player1"></div>
     <div id="player2"></div>
@@ -80,7 +88,15 @@
         placeholder="To Dos & Press Enter."
       />
     </form>
-    <ul id="todo-list" class="hidden"></ul>
+    <div class="todo">
+      <ul id="todo-list" class="hidden"></ul>
+      <button class="todo__btn__reload hidden">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+      <button class="todo__btn__delete hidden">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
     <div id="quote-wrap">
       <div id="quote">
         <span></span>
@@ -97,5 +113,9 @@
     <script type="text/javascript" src="JS/apikey.js"></script>
     <script src="JS/weather.js"></script>
     <script src="JS/youtube.js"></script>
+    <script
+      src="https://kit.fontawesome.com/edabccc9aa.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
