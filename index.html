@@ -28,20 +28,20 @@
   <body>
     <h2 id="current_date"></h2>
     <div id="weather"></div>
-    <form id="routine-form">
-      <input
-        required
-        maxlength="60"
-        type="text"
-        placeholder="Routines & Press Enter."
-      />
-    </form>
     <div class="routine">
-      <ul id="routine-list" class="hidden"></ul>
+      <form id="routine-form">
+        <input
+          required
+          maxlength="60"
+          type="text"
+          placeholder="Routines & Press Enter."
+        />
+      </form>
       <button class="routine__btn__delete hidden">
-        <i class="fa-solid fa-trash-can">🚧</i>
+        <i class="fa-solid fa-trash-can"></i>
       </button>
     </div>
+    <ul id="routine-list" class="hidden"></ul>
 
     <div id="player1"></div>
     <div id="player2"></div>
@@ -86,7 +86,7 @@
         />
       </form>
       <button class="todo__btn__delete hidden">
-        <i class="fa-solid fa-trash-can">🚧</i>
+        <i class="fa-solid fa-trash-can"></i>
       </button>
     </div>
     <ul id="todo-list" class="hidden"></ul>
