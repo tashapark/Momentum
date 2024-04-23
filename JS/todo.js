@@ -173,6 +173,7 @@ function deleteCheckedRoutine() {
 }
 
 toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
+routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
 
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
