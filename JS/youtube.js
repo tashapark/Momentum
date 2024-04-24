@@ -17,6 +17,8 @@ let player2; //플브
 let player3; // 밴드
 let player4; // 예준 플리
 let player5; // user
+let player6; // neck hump
+
 // 2. 이 코드는 Iframe Player API를 비동기적으로 로드한다. !!필수!!
 const tag = document.createElement("script");
 tag.src = "https://www.youtube.com/iframe_api";
@@ -198,6 +200,30 @@ function onYouTubeIframeAPIReady() {
     });
     player5.getIframe().classList.add(HIDDEN_TOGGLE);
   }
+
+  player6 = new YT.Player("player6", {
+    videoId: "ps5ws6qyd9w", //변경-영상ID //for ur neck hump
+    playerVars: {
+      rel: 1, //연관동영상 표시여부(0:표시안함)
+      controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
+      autoplay: 0, //자동재생 여부(1:자동재생 함, mute와 함께 설정)
+      mute: 1, //음소거여부(1:음소거 함)
+      loop: 1, //반복재생여부(1:반복재생 함)
+      playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
+      list: "PLRubaLN0jh9JLOGaOkmSw4vwFAgfs9m7U", //
+      setShuffle: 1,
+      //재생할 영상 리스트 //
+      color: "white",
+      enablejsapi: 1,
+      disablekb: 0,
+
+      events: {
+        onReady: onPlayerReady, //onReady 상태일 때 작동하는 function이름
+        onStateChange: onPlayerStateChange, //onStateChange 상태일 때 작동하는 function이름
+      },
+    },
+  });
+  player6.getIframe().classList.add(HIDDEN_TOGGLE);
 }
 
 // 5. API는 플레이어의 상태가 변화될 때 아래의 function을 불러올 것이다.
@@ -218,6 +244,7 @@ function stopVideo() {
   if (player3) player3.stopVideo();
   if (player4) player4.stopVideo();
   if (player5) player5.stopVideo();
+  if (player6) player6.stopVideo();
 }
 
 // 6. 버튼 생성 및 이벤트 핸들러 함수
@@ -246,12 +273,18 @@ button5.classList.add("button5");
 button5.innerText = "당신의 pick🎶";
 button5.addEventListener("click", playlistButton5);
 
+const button6 = document.createElement("button");
+button6.classList.add("button6");
+button6.innerText = "목이 아픈 당신을 위하여🥲";
+button6.addEventListener("click", playlistButton6);
+
 // 8. 버튼을 body에 추가
 document.body.appendChild(button1);
 document.body.appendChild(button2);
 document.body.appendChild(button3);
 document.body.appendChild(button4);
 document.body.appendChild(button5);
+document.body.appendChild(button6);
 
 // 7. 버튼 클릭 시 플레이어 표시/숨김 토글
 function playlistButton1() {
@@ -272,6 +305,10 @@ function playlistButton4() {
 
 function playlistButton5() {
   player5.getIframe().classList.toggle(HIDDEN_TOGGLE);
+}
+
+function playlistButton6() {
+  player6.getIframe().classList.toggle(HIDDEN_TOGGLE);
 }
 
 // 4. API는 비디오 플레이어가 준비되면 아래의 function을 불러올 것이다.

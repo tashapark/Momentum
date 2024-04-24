@@ -338,11 +338,24 @@ iframe playerVars {
   transition: transform 0.3s ease-in-out;
 }
 
+.button6 {
+  position: fixed;
+  top: 410px;
+  right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: aliceblue;
+  transition: transform 0.3s ease-in-out;
+}
+
 .button1:hover,
 .button2:hover,
 .button3:hover,
 .button4:hover,
 .button5:hover,
+.button6:hover,
 .buttonSubmit:hover,
 .todo__btn__delete:hover {
   color: steelblue;
@@ -357,6 +370,7 @@ iframe playerVars {
 .button3:focus,
 .button4:focus,
 .button5:focus,
+.button:focus,
 .buttonSubmit:focus {
   color: olivedrab;
   background-color: aliceblue;
@@ -660,6 +674,18 @@ iframe playerVars {
     border: none;
     background: transparent;
     color: aliceblue;
+  }
+
+  .button6 {
+    position: fixed;
+    top: 310px;
+    right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    background: transparent;
+    color: aliceblue;
+    transition: transform 0.3s ease-in-out;
   }
 
   #video-form {
