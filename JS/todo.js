@@ -186,10 +186,41 @@ function editToDo(event) {
     editText.addEventListener("blur", () => {
       // 포커스를 잃으면
       editText.removeAttribute("contenteditable"); // contenteditable 속성 제거하여 편집 완료
+      const todoId = li.id;
+      const index = toDos.findIndex((todo) => todo.id === parseInt(todoId));
+      // -1은 특정 아이템을 찾지 못했을 때 반환하는 값
+      if (index !== -1) {
+        toDos[index].text = editText.innerText;
+        saveToDos();
+      }
     });
   }
-  saveToDos();
 }
+
+function editRountines(event) {
+  const editBtn = event.target;
+  const li = editBtn.parentElement;
+  const editText = li.querySelector("span"); // span 요소를 찾음
+  if (editText) {
+    // editText가 null이 아닌 경우에만 실행
+    editText.setAttribute("contenteditable", true); // 편집 가능하도록 설정
+    editText.focus(); // 편집 상태로 이동
+    editText.addEventListener("blur", () => {
+      // 포커스를 잃으면
+      editText.removeAttribute("contenteditable"); // contenteditable 속성 제거하여 편집 완료
+      const routineId = li.id;
+      const index = routineToDos.findIndex(
+        (routine) => routine.id === parseInt(routineId)
+      );
+      // -1은 특정 아이템을 찾지 못했을 때 반환하는 값
+      if (index !== -1) {
+        routineToDos[index].text = editText.innerText;
+        saveRoutines();
+      }
+    });
+  }
+}
+
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
   toDoDeleteBtn.classList.remove(HIDDEN_CLASS);
@@ -228,8 +259,12 @@ function paintRoutine(newRoutine) {
   const button = document.createElement("button");
   button.innerText = "✖️";
   button.addEventListener("click", deleteRoutines);
+  const editBtn = document.createElement("button");
+  editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+  editBtn.addEventListener("click", editRountines);
   li.appendChild(checkBox);
   li.appendChild(span);
+  li.appendChild(editBtn);
   li.appendChild(button);
   routineList.appendChild(li);
 }

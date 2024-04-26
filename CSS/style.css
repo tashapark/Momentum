@@ -75,7 +75,8 @@ body {
 }
 
 #routine-list button:hover,
-.buttonRename:hover {
+.buttonRename:hover,
+#todo-list button:hover {
   background-color: aliceblue;
   color: steelblue;
   border: none;
@@ -164,19 +165,10 @@ ul {
 
 #routine-list button {
   font-size: 12px;
-  margin-left: 4px;
+  margin-left: 3px;
   border: none;
   background: transparent;
   color: #bac9e3;
-}
-
-/* 이거 왜 안돼.. */
-#routine-list button:hover {
-  background-color: aliceblue;
-  color: steelblue;
-  border: none;
-  border-radius: 15px;
-  padding: 2px 6px;
 }
 
 #routine-list input {
