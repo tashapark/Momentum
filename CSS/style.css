@@ -208,7 +208,7 @@ ul {
   text-align: center;
 }
 .todo__btn__delete {
-  padding-top: 15px;
+  padding: 20px 6px 10px 6px;
   border: none;
   font-size: 15px;
   background: transparent;
