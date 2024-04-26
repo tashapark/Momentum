@@ -175,6 +175,21 @@ function deleteCheckedRoutine() {
 toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
 routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
 
+function editToDo(event) {
+  const editBtn = event.target;
+  const li = editBtn.parentElement;
+  const editText = li.querySelector("span"); // span 요소를 찾음
+  if (editText) {
+    // editText가 null이 아닌 경우에만 실행
+    editText.setAttribute("contenteditable", true); // 편집 가능하도록 설정
+    editText.focus(); // 편집 상태로 이동
+    editText.addEventListener("blur", () => {
+      // 포커스를 잃으면
+      editText.removeAttribute("contenteditable"); // contenteditable 속성 제거하여 편집 완료
+    });
+  }
+  saveToDos();
+}
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
   toDoDeleteBtn.classList.remove(HIDDEN_CLASS);
@@ -189,8 +204,12 @@ function paintToDo(newTodo) {
   const button = document.createElement("button");
   button.innerText = "✖️";
   button.addEventListener("click", deleteToDo);
+  const editBtn = document.createElement("button");
+  editBtn.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
+  editBtn.addEventListener("click", editToDo);
   li.appendChild(checkBox);
   li.appendChild(span); //li에 span 들어감
+  li.appendChild(editBtn);
   li.appendChild(button); //li에 버튼 넣기
   toDoList.appendChild(li); // todo리스트에 li넣어줌
 }

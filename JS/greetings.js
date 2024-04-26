@@ -32,7 +32,7 @@ function paintGreetings(username) {
 //이름 수정하는 버튼
 const buttonRename = document.createElement("button");
 buttonRename.classList.add("buttonRename");
-buttonRename.innerText = "✍️";
+buttonRename.innerHTML = '<i class="fa-regular fa-pen-to-square"></i>';
 buttonRename.addEventListener("click", onRenameToggle);
 document.body.appendChild(buttonRename);
 buttonRename.classList.add(HIDDEN_CLASSNAME); // 수정 버튼 감추기

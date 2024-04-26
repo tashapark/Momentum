@@ -69,12 +69,15 @@ body {
   position: fixed;
   top: 13px;
   right: 10px;
+  color: aliceblue;
   border: none;
   background: transparent;
 }
 
+#routine-list button:hover,
 .buttonRename:hover {
   background-color: aliceblue;
+  color: steelblue;
   border: none;
   border-radius: 15px;
   padding: 2px 6px;
@@ -167,6 +170,15 @@ ul {
   color: #bac9e3;
 }
 
+/* 이거 왜 안돼.. */
+#routine-list button:hover {
+  background-color: aliceblue;
+  color: steelblue;
+  border: none;
+  border-radius: 15px;
+  padding: 2px 6px;
+}
+
 #routine-list input {
   margin-right: 10px;
   /* size 조절하려면 label해야 함 귀찮 */
@@ -234,9 +246,12 @@ ul {
   text-align: left;
 }
 
+#todo-list span {
+  margin: 0 2px;
+}
 #todo-list button {
   font-size: 14px;
-  margin-left: 4px;
+  margin-left: 3px;
   border: none;
   background: transparent;
   color: #bac9e3;
@@ -527,7 +542,8 @@ iframe playerVars {
 
   #routine-list button {
     font-size: 12px;
-    margin-left: 4px;
+    margin-left: 0;
+    padding: 0 2px;
     border: none;
     background: transparent;
     color: #bac9e3;
@@ -578,7 +594,6 @@ iframe playerVars {
 
   #todo-list button {
     font-size: 13px;
-    margin-left: 4px;
     border: none;
     background: transparent;
     color: #bac9e3;
@@ -784,14 +799,6 @@ iframe playerVars {
     font-family: monospace, "Nanum Gothic";
   }
 
-  #routine-form {
-    display: none;
-  }
-
-  #routine-list {
-    display: none;
-  }
-
   #todo-form {
     display: flex;
     justify-content: center;
@@ -827,7 +834,6 @@ iframe playerVars {
 
   #todo-list button {
     font-size: 10px;
-    margin-left: 4px;
     border: none;
     background: transparent;
     color: #bac9e3;
@@ -836,18 +842,6 @@ iframe playerVars {
   #todo-list input {
     margin-right: 5px;
     /* size 조절하려면 label해야 함 귀찮 */
-  }
-
-  .routine__btn__delete {
-    display: none;
-  }
-
-  .todo__btn__delete {
-    display: none;
-  }
-
-  #weather {
-    display: none;
   }
 
   #quote-wrap {
@@ -865,39 +859,22 @@ iframe playerVars {
     padding: 10px 20px;
   }
 
-  iframe {
-    display: none;
-  }
-
-  iframe playerVars {
-    display: none;
-  }
-
-  .button1 {
-    display: none;
-  }
-
-  .button2 {
-    display: none;
-  }
-  .button3 {
-    display: none;
-  }
-  .button4 {
-    display: none;
-  }
-  .button5 {
-    display: none;
-  }
-
-  #video-form {
-    display: none;
-  }
+  #routine-form,
+  #routine-list,
+  .routine__btn__delete,
+  .todo__btn__delete,
+  #weather,
+  iframe,
+  iframe playerVars,
+  .button1,
+  .button2,
+  .button3,
+  .button4,
+  .button5,
+  .button6,
+  .buttonSubmit,
+  #video-form,
   #playlist-form {
-    display: none;
-  }
-
-  .buttonSubmit {
     display: none;
   }
 }
