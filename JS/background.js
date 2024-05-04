@@ -35,6 +35,13 @@ const images = [
   "33.jpg",
   "34.jpg",
   "35.jpg",
+  "36.jpg",
+  "37.jpg",
+  "38.jpg",
+  "39.jpg",
+  "40.jpg",
+  "41.jpg",
+  "42.jpg",
 ];
 
 function bgImageChange() {
