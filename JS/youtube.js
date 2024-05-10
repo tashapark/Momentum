@@ -101,7 +101,7 @@ function onYouTubeIframeAPIReady() {
   player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
-    videoId: "lHILyDraRvA", //변경-영상ID //김윤아 킬보
+    videoId: "BzJdUkpKVA4", //변경-영상ID //디오 신곡
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
