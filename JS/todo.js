@@ -2,11 +2,13 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 const toDoDeleteBtn = document.querySelector(".todo__btn__delete");
+const toDoCheckAllBtn = document.querySelector(".todo__btn__check");
 
 const routineForm = document.getElementById("routine-form");
 const routineInput = routineForm.querySelector("#routine-form input");
 const routineList = document.getElementById("routine-list");
 const routineDeleteBtn = document.querySelector(".routine__btn__delete");
+const routineCheckAllBtn = document.querySelector(".routine__btn__check");
 
 const TODOS_KEY = "todos";
 const ROUTINE_KEY = "routines";
@@ -157,6 +159,17 @@ function deleteCheckedTodo() {
   saveToDos();
 }
 
+function checkAllTodo() {
+  const boxes = document.querySelectorAll(
+    "#todo-list input[type='checkbox']:unchecked"
+  );
+  boxes.forEach((checkbox) => {
+    const li = checkbox.parentElement;
+    li.checkbox.checked;
+    toDos = toDos.filter((toDo) => toDo.id != parseInt(li.id));
+  });
+}
+
 function deleteCheckedRoutine() {
   const routineCheckboxes = document.querySelectorAll(
     "#routine-list input[type='checkbox']:checked"
@@ -172,8 +185,24 @@ function deleteCheckedRoutine() {
   saveRoutines();
 }
 
+function checkAllRoutine() {
+  const boxes = document.querySelectorAll(
+    "#routine-list input[type='checkbox']:unchecked"
+  );
+  boxes.forEach((checkbox) => {
+    const li = checkbox.parentElement;
+    li.checkbox.checked;
+    routineToDos = routineToDos.filter(
+      (routine) => routine.id !== parseInt(li.id)
+    );
+  });
+}
+
 toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
 routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
+
+toDoCheckAllBtn.addEventListener("click", checkAllTodo);
+routineCheckAllBtn.addEventListener("click", checkAllRoutine);
 
 function editToDo(event) {
   const editBtn = event.target;
