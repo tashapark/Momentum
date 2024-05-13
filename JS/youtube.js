@@ -260,7 +260,7 @@ button2.addEventListener("click", playlistButton2);
 
 const button3 = document.createElement("button");
 button3.classList.add("button3");
-button3.innerText = "Jazz🎷🎵";
+button3.innerText = "Jazz 🎹🎷";
 button3.addEventListener("click", playlistButton3);
 
 const button4 = document.createElement("button");
@@ -270,12 +270,12 @@ button4.addEventListener("click", playlistButton4);
 
 const button5 = document.createElement("button");
 button5.classList.add("button5");
-button5.innerText = "당신의 pick🎶";
+button5.innerText = "당신의 pick 🎶";
 button5.addEventListener("click", playlistButton5);
 
 const button6 = document.createElement("button");
 button6.classList.add("button6");
-button6.innerText = "목이 아픈 당신을 위하여🥲";
+button6.innerText = "목이 아픈 당신을 위하여 🥲";
 button6.addEventListener("click", playlistButton6);
 
 // 8. 버튼을 body에 추가
