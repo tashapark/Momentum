@@ -34,6 +34,7 @@ function deleteToDo(event) {
     //여기는 배열이 아니라서 length.. 사용 gpt천재
     toDoList.classList.add(HIDDEN_CLASS);
     toDoDeleteBtn.classList.add(HIDDEN_CLASS);
+    toDoCheckAllBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -47,6 +48,7 @@ function deleteRoutines(event) {
   if (routineToDos.length === 0) {
     routineList.classList.add(HIDDEN_CLASS);
     routineDeleteBtn.classList.add(HIDDEN_CLASS);
+    routineCheckAllBtn.classList.add(HIDDEN_CLASS);
   }
 }
 
@@ -159,15 +161,30 @@ function deleteCheckedTodo() {
   saveToDos();
 }
 
-function checkAllTodo() {
-  const boxes = document.querySelectorAll(
-    "#todo-list input[type='checkbox']:unchecked"
+function onCheckAllTodo() {
+  const checkboxes = document.querySelectorAll(
+    "#todo-list input[type='checkbox']"
   );
-  boxes.forEach((checkbox) => {
-    const li = checkbox.parentElement;
-    li.checkbox.checked;
-    toDos = toDos.filter((toDo) => toDo.id != parseInt(li.id));
+  let allChecked = true;
+  checkboxes.forEach((checkbox) => {
+    // 체크되어 있는 항목이 하나라도 있으면 allChecked를 false로 설정합니다.
+    if (!checkbox.checked) {
+      allChecked = false;
+    }
   });
+  checkboxes.forEach((checkbox) => {
+    // 모든 항목이 체크되어 있으면 체크를 해제하고,
+    // 그렇지 않으면 모든 항목을 체크합니다.
+    checkbox.checked = !allChecked;
+    // 해당 ToDo 항목의 checked 속성을 업데이트합니다.
+    const li = checkbox.parentElement;
+    const todoId = li.dataset.id;
+    const index = toDos.findIndex((todo) => todo.id === parseInt(todoId));
+    if (index !== -1) {
+      toDos[index].checked = !allChecked;
+    }
+  });
+  saveToDos(); // 변경된 ToDo 리스트를 저장합니다.
 }
 
 function deleteCheckedRoutine() {
@@ -185,24 +202,39 @@ function deleteCheckedRoutine() {
   saveRoutines();
 }
 
-function checkAllRoutine() {
-  const boxes = document.querySelectorAll(
-    "#routine-list input[type='checkbox']:unchecked"
+function onCheckAllRoutine() {
+  const checkboxes = document.querySelectorAll(
+    "#routine-list input[type='checkbox']"
   );
-  boxes.forEach((checkbox) => {
-    const li = checkbox.parentElement;
-    li.checkbox.checked;
-    routineToDos = routineToDos.filter(
-      (routine) => routine.id !== parseInt(li.id)
-    );
+  let allChecked = true;
+  checkboxes.forEach((checkbox) => {
+    // 체크되어 있는 항목이 하나라도 있으면 allChecked를 false로 설정합니다.
+    if (!checkbox.checked) {
+      allChecked = false;
+    }
   });
+  checkboxes.forEach((checkbox) => {
+    // 모든 항목이 체크되어 있으면 체크를 해제하고,
+    // 그렇지 않으면 모든 항목을 체크합니다.
+    checkbox.checked = !allChecked;
+    // 해당 ToDo 항목의 checked 속성을 업데이트합니다.
+    const li = checkbox.parentElement;
+    const routineId = li.dataset.id;
+    const index = routineToDos.findIndex(
+      (routine) => routine.id === parseInt(routineId)
+    );
+    if (index !== -1) {
+      routineToDos[index].checked = !allChecked;
+    }
+  });
+  saveRoutines(); // 변경된 ToDo 리스트를 저장합니다.
 }
 
 toDoDeleteBtn.addEventListener("click", deleteCheckedTodo);
 routineDeleteBtn.addEventListener("click", deleteCheckedRoutine);
 
-toDoCheckAllBtn.addEventListener("click", checkAllTodo);
-routineCheckAllBtn.addEventListener("click", checkAllRoutine);
+toDoCheckAllBtn.addEventListener("click", onCheckAllTodo);
+routineCheckAllBtn.addEventListener("click", onCheckAllRoutine);
 
 function editToDo(event) {
   const editBtn = event.target;
@@ -253,6 +285,7 @@ function editRountines(event) {
 function paintToDo(newTodo) {
   toDoList.classList.remove(HIDDEN_CLASS);
   toDoDeleteBtn.classList.remove(HIDDEN_CLASS);
+  toDoCheckAllBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newTodo.id}`;
@@ -277,6 +310,7 @@ function paintToDo(newTodo) {
 function paintRoutine(newRoutine) {
   routineList.classList.remove(HIDDEN_CLASS);
   routineDeleteBtn.classList.remove(HIDDEN_CLASS);
+  routineCheckAllBtn.classList.remove(HIDDEN_CLASS);
   const checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
   checkBox.id = `checkbox-${newRoutine.id}`;
