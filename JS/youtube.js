@@ -14,7 +14,7 @@ let savedUserPL = localStorage.getItem(PL_ID);
 // 3. API 코드를 다운로드 받은 다음에 <iframe>을 생성하는 기능 (youtube player도 더불어)
 let player1; //asmr
 let player2; //플브
-let player3; // 밴드
+let player3; // 재즈
 let player4; // 예준 플리
 let player5; // user
 let player6; // neck hump
@@ -101,7 +101,7 @@ function onYouTubeIframeAPIReady() {
   player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
-    videoId: "BzJdUkpKVA4", //변경-영상ID //디오 신곡
+    videoId: "9XzrJPJLwn8", //변경-영상ID //썸머 남녜준씨
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
@@ -125,7 +125,7 @@ function onYouTubeIframeAPIReady() {
   player2.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player3 = new YT.Player("player3", {
-    videoId: "RowlrvmyFEk", //변경-영상ID //웰컴 투더쇼
+    videoId: "-uzOGHaSYeY", //변경-영상ID //화양연화
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
@@ -133,7 +133,7 @@ function onYouTubeIframeAPIReady() {
       mute: 1, //음소거여부(1:음소거 함)
       loop: 1, //반복재생여부(1:반복재생 함)
       playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
-      list: "PLRubaLN0jh9KG4rmmC92a0uNo1aV4LIrx", //봄은 밴드지
+      list: "PLRubaLN0jh9IM9u-HR8pCFu8UjU0mX5h1", //jazz
       setShuffle: 1,
       //재생할 영상 리스트 //
       color: "white",
@@ -260,7 +260,7 @@ button2.addEventListener("click", playlistButton2);
 
 const button3 = document.createElement("button");
 button3.classList.add("button3");
-button3.innerText = "봄은 밴드지 🌸💗";
+button3.innerText = "Jazz🎷🎵";
 button3.addEventListener("click", playlistButton3);
 
 const button4 = document.createElement("button");
