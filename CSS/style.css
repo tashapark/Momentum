@@ -141,6 +141,17 @@ body {
 .routine__btn__delete {
   position: fixed;
   top: 140px;
+  left: 195px;
+  border: none;
+  font-size: 15px;
+  background: transparent;
+  color: aliceblue;
+  transition: transform 0.3s ease-in-out;
+}
+
+.routine__btn__check {
+  position: fixed;
+  top: 140px;
   left: 170px;
   border: none;
   font-size: 15px;
@@ -208,7 +219,15 @@ ul {
   text-align: center;
 }
 .todo__btn__delete {
-  padding: 20px 6px 10px 6px;
+  margin-top: 10px;
+  border: none;
+  font-size: 15px;
+  background: transparent;
+  color: aliceblue;
+  transition: transform 0.3s ease-in-out;
+}
+.todo__btn__check {
+  margin-top: 10px;
   border: none;
   font-size: 15px;
   background: transparent;
@@ -217,7 +236,9 @@ ul {
 }
 
 .routine__btn__delete:hover,
-.todo__btn__delete:hover {
+.todo__btn__delete:hover,
+.routine__btn__check:hover,
+.todo__btn__check:hover {
   color: steelblue;
   background-color: aliceblue;
   border: none;
@@ -546,10 +567,17 @@ iframe playerVars {
     /* size 조절하려면 label해야 함 귀찮 */
   }
 
+  .routine__btn__check {
+    position: fixed;
+    top: 165px;
+    left: 150px;
+    font-size: 13px;
+  }
+
   .routine__btn__delete {
     position: fixed;
-    top: 132px;
-    left: 165px;
+    top: 185px;
+    left: 150px;
     font-size: 13px;
   }
 
@@ -596,13 +624,9 @@ iframe playerVars {
     /* size 조절하려면 label해야 함 귀찮 */
   }
 
-  .todo__btn__delete {
-    padding-top: 2px;
-    border: none;
-    font-size: 14px;
-    background: transparent;
-    color: aliceblue;
-    transition: transform 0.3s ease-in-out;
+  .todo__btn__delete,
+  .todo__btn__check {
+    margin-top: 2px;
   }
 
   #weather {
@@ -855,6 +879,8 @@ iframe playerVars {
   #routine-list,
   .routine__btn__delete,
   .todo__btn__delete,
+  .routine__btn__check,
+  .todo__btn__check,
   #weather,
   iframe,
   iframe playerVars,
