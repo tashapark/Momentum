@@ -173,17 +173,21 @@ function onCheckAllTodo() {
     checkbox.checked = !allChecked;
     // 해당 ToDo 항목의 checked 속성을 업데이트합니다.
     const li = checkbox.parentElement;
+    const text = checkbox.nextElementSibling;
+    if (text) {
+      if (checkbox.checked) {
+        text.style.textDecorationLine = "line-through";
+      } else {
+        text.style.textDecorationLine = "none";
+      }
+    }
+
     const todoId = li.dataset.id;
     const index = toDos.findIndex((todo) => todo.id === parseInt(todoId));
     if (index !== -1) {
       toDos[index].checked = !allChecked;
     }
   });
-  if (checkbox.checked) {
-    text.style.textDecorationLine = "line-through";
-  } else {
-    text.style.textDecorationLine = "none";
-  }
   saveToDos(); // 변경된 ToDo 리스트를 저장합니다.
 }
 
@@ -219,6 +223,15 @@ function onCheckAllRoutine() {
     checkbox.checked = !allChecked;
     // 해당 ToDo 항목의 checked 속성을 업데이트합니다.
     const li = checkbox.parentElement;
+    const text = checkbox.nextElementSibling;
+    if (text) {
+      if (checkbox.checked) {
+        text.style.textDecorationLine = "line-through";
+      } else {
+        text.style.textDecorationLine = "none";
+      }
+    }
+
     const routineId = li.dataset.id;
     const index = routineToDos.findIndex(
       (routine) => routine.id === parseInt(routineId)
