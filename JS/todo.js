@@ -90,14 +90,12 @@ function checkToDo(event) {
   const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
   const li = checkbox.parentElement; // li 요소를 가져옵니다.
 
-  // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
   if (checkbox.checked) {
+    // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
     // 목록에서 해당 li 요소를 삭제합니다.
     toDoList.removeChild(li);
     // 목록의 마지막에 다시 추가합니다.
     toDoList.appendChild(li);
-  }
-  if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
   } else {
     text.style.textDecorationLine = "none";
@@ -121,14 +119,11 @@ function checkRoutines(event) {
   const text = checkbox.nextElementSibling;
   const li = checkbox.parentElement; // li 요소를 가져옵니다.
 
-  // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
   if (checkbox.checked) {
     // 목록에서 해당 li 요소를 삭제합니다.
     routineList.removeChild(li);
     // 목록의 마지막에 다시 추가합니다.
     routineList.appendChild(li);
-  }
-  if (checkbox.checked) {
     text.style.textDecorationLine = "line-through";
   } else {
     text.style.textDecorationLine = "none";
@@ -184,6 +179,11 @@ function onCheckAllTodo() {
       toDos[index].checked = !allChecked;
     }
   });
+  if (checkbox.checked) {
+    text.style.textDecorationLine = "line-through";
+  } else {
+    text.style.textDecorationLine = "none";
+  }
   saveToDos(); // 변경된 ToDo 리스트를 저장합니다.
 }
 
