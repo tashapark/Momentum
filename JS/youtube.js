@@ -101,7 +101,7 @@ function onYouTubeIframeAPIReady() {
   player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
-    videoId: "ZNra8eK0K6k", //변경-영상ID //누구 없소
+    videoId: "vXm52ToV8_c", //변경-영상ID //홀씨
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
