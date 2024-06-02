@@ -702,6 +702,10 @@ const quotes = [
     Don't expect worthy challenges to be easy.`,
     author: `ACC 전시 중`,
   },
+  {
+    quote: `You've only gotten better with time.`,
+    author: ``,
+  },
 ];
 
 function quoteChange() {
