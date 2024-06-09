@@ -101,7 +101,7 @@ function onYouTubeIframeAPIReady() {
   player1.getIframe().classList.add(HIDDEN_TOGGLE);
 
   player2 = new YT.Player("player2", {
-    videoId: "vXm52ToV8_c", //변경-영상ID //홀씨
+    videoId: "24CLtUX_48E", //변경-영상ID //그땐 그랬지
     playerVars: {
       rel: 1, //연관동영상 표시여부(0:표시안함)
       controls: 1, //플레이어 컨트롤러 표시여부(0:표시안함)
@@ -110,7 +110,7 @@ function onYouTubeIframeAPIReady() {
       loop: 1, //반복재생여부(1:반복재생 함)
       playsinline: 1, //iOS환경에서 전체화면으로 재생하지 않게
       list: "PLRubaLN0jh9JCZcTIRRNBvUq3Srx9o9SN", //플브랑 비아이
-      shuffle: 1,
+      shuffle: 0,
       //재생할 영상 리스트 //
       color: "white",
       enablejsapi: 1,
