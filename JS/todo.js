@@ -68,7 +68,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 window.addEventListener("DOMContentLoaded", () => {
   const savedRoutines = localStorage.getItem(ROUTINE_KEY);
   if (savedRoutines !== null) {
@@ -89,7 +88,6 @@ function checkToDo(event) {
   const checkbox = event.target; //무조건 따로 정의를 해줄 것
   const text = checkbox.nextElementSibling; // 체크박스 다음 요소인 텍스트 가져오기
   const li = checkbox.parentElement; // li 요소를 가져옵니다.
-
   if (checkbox.checked) {
     // 체크된 상태인 경우에만 마지막으로 이동시킵니다.
     // 목록에서 해당 li 요소를 삭제합니다.
@@ -105,7 +103,6 @@ function checkToDo(event) {
   const index = toDos.findIndex((todo) => todo.id.toString() === todoId); // 해당 id를 가진 todo의 인덱스 찾기
   if (index !== -1) {
     toDos[index].checked = checkbox.checked; // 해당 todo의 checked 속성 업데이트
-
     if (checkbox.checked) {
       const checkedItem = toDos.splice(index, 1)[0]; //index 위치의 1개를 제거하되, [0] 제거한 인덱스의 1번째 즉 제거한 것 반환
       toDos.push(checkedItem);
@@ -113,12 +110,10 @@ function checkToDo(event) {
     saveToDos(); // 변경된 todo 리스트를 다시 저장
   }
 }
-
 function checkRoutines(event) {
   const checkbox = event.target;
   const text = checkbox.nextElementSibling;
   const li = checkbox.parentElement; // li 요소를 가져옵니다.
-
   if (checkbox.checked) {
     // 목록에서 해당 li 요소를 삭제합니다.
     routineList.removeChild(li);
@@ -128,7 +123,6 @@ function checkRoutines(event) {
   } else {
     text.style.textDecorationLine = "none";
   }
-
   const routineId = li.id;
   const index = routineToDos.findIndex(
     (routine) => routine.id.toString() === routineId
@@ -152,7 +146,6 @@ function deleteCheckedTodo() {
     li.remove();
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
   });
-
   saveToDos();
 }
 
@@ -188,6 +181,11 @@ function onCheckAllTodo() {
       toDos[index].checked = !allChecked;
     }
   });
+  if (checkbox.checked) {
+    text.style.textDecorationLine = "line-through";
+  } else {
+    text.style.textDecorationLine = "none";
+  }
   saveToDos(); // 변경된 ToDo 리스트를 저장합니다.
 }
 
@@ -202,7 +200,6 @@ function deleteCheckedRoutine() {
       (routine) => routine.id !== parseInt(li.id)
     );
   });
-
   saveRoutines();
 }
 
@@ -357,7 +354,6 @@ function handleToDoSubmit(event) {
   paintToDo(newTodoObj); //화면에 투두 리스트 보이게
   saveToDos();
 }
-
 function handleRoutineSubmit(event) {
   event.preventDefault();
   const newRoutine = routineInput.value;
@@ -375,7 +371,6 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 routineForm.addEventListener("submit", handleRoutineSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
-
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos);
   //ls에서 가져온 string을 js object로 변경
@@ -386,7 +381,6 @@ if (savedToDos !== null) {
 }
 
 const savedRoutineToDos = localStorage.getItem(ROUTINE_KEY);
-
 if (savedRoutineToDos !== null) {
   const parsedRoutineToDos = JSON.parse(savedRoutineToDos);
   routineToDos = parsedRoutineToDos;
